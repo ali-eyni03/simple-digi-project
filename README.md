@@ -1,12 +1,24 @@
-# React + Vite
+# پلتفرم دیجی کالا ساده
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+این پروژهدانشگاهی، طراحی استاتیک برای یک پلتفرم فروشگاهی می‌باشد که به‌صورت دمو و بدون نیاز به سرور در دسترس قرار دارد. 
 
-Currently, two official plugins are available:
+## 🌐 لینک سایت
+[مشاهده دمو زنده](https://ali-eyni03.github.io/simple-digi-project/)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🌐  لینک پروژه اصلی
+[مشاهده دمو زنده](https://github.com/ali-eyni03/simple-digikala-clone-project)
 
-## Expanding the ESLint configuration
+## 📞 ارتباط با من
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- 💼 [**لینکدین**](https://www.linkedin.com/in/ali-eyni-018b05180/)
+- 📧[ **ایمیل**](ali.eyni1382@gmail.com)
+- 🐙 [**گیت‌هاب**](@ali-eyni03)
+
+---
+
+<div align="center">
+
+**⭐ اگر این پروژه برایتان مفید بود، ممنون میشم ستاره بدید!**
+
+
+</div>
