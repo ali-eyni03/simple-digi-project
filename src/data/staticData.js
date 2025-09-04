@@ -29,10 +29,16 @@ export const getStaticCategories = () => {
 };
 
 // Helper function to fix image paths
+// Helper function to fix image paths
 const getImagePath = (imagePath) => {
-    const basePath = import.meta.env.BASE_URL || '/';
+    let basePath = import.meta.env.BASE_URL || '/';
     
-    if (!imagePath) return `${basePath}placeholder-image.png`; // Fixed this line
+    // Ensure basePath ends with a slash
+    if (!basePath.endsWith('/')) {
+        basePath += '/';
+    }
+    
+    if (!imagePath) return `${basePath}placeholder-image.png`;
     
     if (imagePath.startsWith('http://') || imagePath.startsWith('https://')) {
         return imagePath;
