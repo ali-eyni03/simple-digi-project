@@ -1,0 +1,2052 @@
+[
+{
+  "model": "admin.logentry",
+  "pk": 1,
+  "fields": {
+    "action_time": "2025-09-03T17:07:09.724Z",
+    "user": "09111111111",
+    "content_type": 6,
+    "object_id": "1",
+    "object_repr": "الکترونیک",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 2,
+  "fields": {
+    "action_time": "2025-09-03T17:07:24.703Z",
+    "user": "09111111111",
+    "content_type": 6,
+    "object_id": "2",
+    "object_repr": "موبایل",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 3,
+  "fields": {
+    "action_time": "2025-09-03T17:07:40.937Z",
+    "user": "09111111111",
+    "content_type": 6,
+    "object_id": "3",
+    "object_repr": "لپ تاپ",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 4,
+  "fields": {
+    "action_time": "2025-09-03T17:08:04.335Z",
+    "user": "09111111111",
+    "content_type": 6,
+    "object_id": "4",
+    "object_repr": "تلویزیون",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 5,
+  "fields": {
+    "action_time": "2025-09-03T17:08:22.904Z",
+    "user": "09111111111",
+    "content_type": 6,
+    "object_id": "5",
+    "object_repr": "هدفون",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 6,
+  "fields": {
+    "action_time": "2025-09-03T17:10:28.429Z",
+    "user": "09111111111",
+    "content_type": 6,
+    "object_id": "1",
+    "object_repr": "الکترونیک",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 1,
+  "fields": {
+    "name": "Can add log entry",
+    "content_type": 1,
+    "codename": "add_logentry"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 2,
+  "fields": {
+    "name": "Can change log entry",
+    "content_type": 1,
+    "codename": "change_logentry"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 3,
+  "fields": {
+    "name": "Can delete log entry",
+    "content_type": 1,
+    "codename": "delete_logentry"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 4,
+  "fields": {
+    "name": "Can view log entry",
+    "content_type": 1,
+    "codename": "view_logentry"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 5,
+  "fields": {
+    "name": "Can add permission",
+    "content_type": 2,
+    "codename": "add_permission"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 6,
+  "fields": {
+    "name": "Can change permission",
+    "content_type": 2,
+    "codename": "change_permission"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 7,
+  "fields": {
+    "name": "Can delete permission",
+    "content_type": 2,
+    "codename": "delete_permission"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 8,
+  "fields": {
+    "name": "Can view permission",
+    "content_type": 2,
+    "codename": "view_permission"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 9,
+  "fields": {
+    "name": "Can add group",
+    "content_type": 3,
+    "codename": "add_group"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 10,
+  "fields": {
+    "name": "Can change group",
+    "content_type": 3,
+    "codename": "change_group"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 11,
+  "fields": {
+    "name": "Can delete group",
+    "content_type": 3,
+    "codename": "delete_group"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 12,
+  "fields": {
+    "name": "Can view group",
+    "content_type": 3,
+    "codename": "view_group"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 13,
+  "fields": {
+    "name": "Can add content type",
+    "content_type": 4,
+    "codename": "add_contenttype"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 14,
+  "fields": {
+    "name": "Can change content type",
+    "content_type": 4,
+    "codename": "change_contenttype"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 15,
+  "fields": {
+    "name": "Can delete content type",
+    "content_type": 4,
+    "codename": "delete_contenttype"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 16,
+  "fields": {
+    "name": "Can view content type",
+    "content_type": 4,
+    "codename": "view_contenttype"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 17,
+  "fields": {
+    "name": "Can add session",
+    "content_type": 5,
+    "codename": "add_session"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 18,
+  "fields": {
+    "name": "Can change session",
+    "content_type": 5,
+    "codename": "change_session"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 19,
+  "fields": {
+    "name": "Can delete session",
+    "content_type": 5,
+    "codename": "delete_session"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 20,
+  "fields": {
+    "name": "Can view session",
+    "content_type": 5,
+    "codename": "view_session"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 21,
+  "fields": {
+    "name": "Can add دسته بندی",
+    "content_type": 6,
+    "codename": "add_category"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 22,
+  "fields": {
+    "name": "Can change دسته بندی",
+    "content_type": 6,
+    "codename": "change_category"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 23,
+  "fields": {
+    "name": "Can delete دسته بندی",
+    "content_type": 6,
+    "codename": "delete_category"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 24,
+  "fields": {
+    "name": "Can view دسته بندی",
+    "content_type": 6,
+    "codename": "view_category"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 25,
+  "fields": {
+    "name": "Can add محصول پایه",
+    "content_type": 7,
+    "codename": "add_productbase"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 26,
+  "fields": {
+    "name": "Can change محصول پایه",
+    "content_type": 7,
+    "codename": "change_productbase"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 27,
+  "fields": {
+    "name": "Can delete محصول پایه",
+    "content_type": 7,
+    "codename": "delete_productbase"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 28,
+  "fields": {
+    "name": "Can view محصول پایه",
+    "content_type": 7,
+    "codename": "view_productbase"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 29,
+  "fields": {
+    "name": "Can add محصول",
+    "content_type": 8,
+    "codename": "add_product"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 30,
+  "fields": {
+    "name": "Can change محصول",
+    "content_type": 8,
+    "codename": "change_product"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 31,
+  "fields": {
+    "name": "Can delete محصول",
+    "content_type": 8,
+    "codename": "delete_product"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 32,
+  "fields": {
+    "name": "Can view محصول",
+    "content_type": 8,
+    "codename": "view_product"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 33,
+  "fields": {
+    "name": "Can add product base image",
+    "content_type": 9,
+    "codename": "add_productbaseimage"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 34,
+  "fields": {
+    "name": "Can change product base image",
+    "content_type": 9,
+    "codename": "change_productbaseimage"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 35,
+  "fields": {
+    "name": "Can delete product base image",
+    "content_type": 9,
+    "codename": "delete_productbaseimage"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 36,
+  "fields": {
+    "name": "Can view product base image",
+    "content_type": 9,
+    "codename": "view_productbaseimage"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 37,
+  "fields": {
+    "name": "Can add product image",
+    "content_type": 10,
+    "codename": "add_productimage"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 38,
+  "fields": {
+    "name": "Can change product image",
+    "content_type": 10,
+    "codename": "change_productimage"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 39,
+  "fields": {
+    "name": "Can delete product image",
+    "content_type": 10,
+    "codename": "delete_productimage"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 40,
+  "fields": {
+    "name": "Can view product image",
+    "content_type": 10,
+    "codename": "view_productimage"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 41,
+  "fields": {
+    "name": "Can add product price history",
+    "content_type": 11,
+    "codename": "add_productpricehistory"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 42,
+  "fields": {
+    "name": "Can change product price history",
+    "content_type": 11,
+    "codename": "change_productpricehistory"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 43,
+  "fields": {
+    "name": "Can delete product price history",
+    "content_type": 11,
+    "codename": "delete_productpricehistory"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 44,
+  "fields": {
+    "name": "Can view product price history",
+    "content_type": 11,
+    "codename": "view_productpricehistory"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 45,
+  "fields": {
+    "name": "Can add product variant",
+    "content_type": 12,
+    "codename": "add_productvariant"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 46,
+  "fields": {
+    "name": "Can change product variant",
+    "content_type": 12,
+    "codename": "change_productvariant"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 47,
+  "fields": {
+    "name": "Can delete product variant",
+    "content_type": 12,
+    "codename": "delete_productvariant"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 48,
+  "fields": {
+    "name": "Can view product variant",
+    "content_type": 12,
+    "codename": "view_productvariant"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 49,
+  "fields": {
+    "name": "Can add seller offer",
+    "content_type": 13,
+    "codename": "add_selleroffer"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 50,
+  "fields": {
+    "name": "Can change seller offer",
+    "content_type": 13,
+    "codename": "change_selleroffer"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 51,
+  "fields": {
+    "name": "Can delete seller offer",
+    "content_type": 13,
+    "codename": "delete_selleroffer"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 52,
+  "fields": {
+    "name": "Can view seller offer",
+    "content_type": 13,
+    "codename": "view_selleroffer"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 53,
+  "fields": {
+    "name": "Can add seller offer price history",
+    "content_type": 14,
+    "codename": "add_sellerofferpricehistory"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 54,
+  "fields": {
+    "name": "Can change seller offer price history",
+    "content_type": 14,
+    "codename": "change_sellerofferpricehistory"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 55,
+  "fields": {
+    "name": "Can delete seller offer price history",
+    "content_type": 14,
+    "codename": "delete_sellerofferpricehistory"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 56,
+  "fields": {
+    "name": "Can view seller offer price history",
+    "content_type": 14,
+    "codename": "view_sellerofferpricehistory"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 57,
+  "fields": {
+    "name": "Can add custom user",
+    "content_type": 15,
+    "codename": "add_customuser"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 58,
+  "fields": {
+    "name": "Can change custom user",
+    "content_type": 15,
+    "codename": "change_customuser"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 59,
+  "fields": {
+    "name": "Can delete custom user",
+    "content_type": 15,
+    "codename": "delete_customuser"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 60,
+  "fields": {
+    "name": "Can view custom user",
+    "content_type": 15,
+    "codename": "view_customuser"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 61,
+  "fields": {
+    "name": "Can add profile",
+    "content_type": 16,
+    "codename": "add_profile"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 62,
+  "fields": {
+    "name": "Can change profile",
+    "content_type": 16,
+    "codename": "change_profile"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 63,
+  "fields": {
+    "name": "Can delete profile",
+    "content_type": 16,
+    "codename": "delete_profile"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 64,
+  "fields": {
+    "name": "Can view profile",
+    "content_type": 16,
+    "codename": "view_profile"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 65,
+  "fields": {
+    "name": "Can add seller",
+    "content_type": 17,
+    "codename": "add_seller"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 66,
+  "fields": {
+    "name": "Can change seller",
+    "content_type": 17,
+    "codename": "change_seller"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 67,
+  "fields": {
+    "name": "Can delete seller",
+    "content_type": 17,
+    "codename": "delete_seller"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 68,
+  "fields": {
+    "name": "Can view seller",
+    "content_type": 17,
+    "codename": "view_seller"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 69,
+  "fields": {
+    "name": "Can add seller profile",
+    "content_type": 18,
+    "codename": "add_sellerprofile"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 70,
+  "fields": {
+    "name": "Can change seller profile",
+    "content_type": 18,
+    "codename": "change_sellerprofile"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 71,
+  "fields": {
+    "name": "Can delete seller profile",
+    "content_type": 18,
+    "codename": "delete_sellerprofile"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 72,
+  "fields": {
+    "name": "Can view seller profile",
+    "content_type": 18,
+    "codename": "view_sellerprofile"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 73,
+  "fields": {
+    "name": "Can add سبد خرید",
+    "content_type": 19,
+    "codename": "add_cart"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 74,
+  "fields": {
+    "name": "Can change سبد خرید",
+    "content_type": 19,
+    "codename": "change_cart"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 75,
+  "fields": {
+    "name": "Can delete سبد خرید",
+    "content_type": 19,
+    "codename": "delete_cart"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 76,
+  "fields": {
+    "name": "Can view سبد خرید",
+    "content_type": 19,
+    "codename": "view_cart"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 77,
+  "fields": {
+    "name": "Can add سفارش",
+    "content_type": 20,
+    "codename": "add_order"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 78,
+  "fields": {
+    "name": "Can change سفارش",
+    "content_type": 20,
+    "codename": "change_order"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 79,
+  "fields": {
+    "name": "Can delete سفارش",
+    "content_type": 20,
+    "codename": "delete_order"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 80,
+  "fields": {
+    "name": "Can view سفارش",
+    "content_type": 20,
+    "codename": "view_order"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 81,
+  "fields": {
+    "name": "Can add آیتم سفارش",
+    "content_type": 21,
+    "codename": "add_orderitem"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 82,
+  "fields": {
+    "name": "Can change آیتم سفارش",
+    "content_type": 21,
+    "codename": "change_orderitem"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 83,
+  "fields": {
+    "name": "Can delete آیتم سفارش",
+    "content_type": 21,
+    "codename": "delete_orderitem"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 84,
+  "fields": {
+    "name": "Can view آیتم سفارش",
+    "content_type": 21,
+    "codename": "view_orderitem"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 85,
+  "fields": {
+    "name": "Can add علاقه‌مندی",
+    "content_type": 22,
+    "codename": "add_wishlist"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 86,
+  "fields": {
+    "name": "Can change علاقه‌مندی",
+    "content_type": 22,
+    "codename": "change_wishlist"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 87,
+  "fields": {
+    "name": "Can delete علاقه‌مندی",
+    "content_type": 22,
+    "codename": "delete_wishlist"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 88,
+  "fields": {
+    "name": "Can view علاقه‌مندی",
+    "content_type": 22,
+    "codename": "view_wishlist"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 89,
+  "fields": {
+    "name": "Can add آیتم سبد خرید",
+    "content_type": 23,
+    "codename": "add_cartitem"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 90,
+  "fields": {
+    "name": "Can change آیتم سبد خرید",
+    "content_type": 23,
+    "codename": "change_cartitem"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 91,
+  "fields": {
+    "name": "Can delete آیتم سبد خرید",
+    "content_type": 23,
+    "codename": "delete_cartitem"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 92,
+  "fields": {
+    "name": "Can view آیتم سبد خرید",
+    "content_type": 23,
+    "codename": "view_cartitem"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 1,
+  "fields": {
+    "app_label": "admin",
+    "model": "logentry"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 2,
+  "fields": {
+    "app_label": "auth",
+    "model": "permission"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 3,
+  "fields": {
+    "app_label": "auth",
+    "model": "group"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 4,
+  "fields": {
+    "app_label": "contenttypes",
+    "model": "contenttype"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 5,
+  "fields": {
+    "app_label": "sessions",
+    "model": "session"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 6,
+  "fields": {
+    "app_label": "products",
+    "model": "category"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 7,
+  "fields": {
+    "app_label": "products",
+    "model": "productbase"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 8,
+  "fields": {
+    "app_label": "products",
+    "model": "product"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 9,
+  "fields": {
+    "app_label": "products",
+    "model": "productbaseimage"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 10,
+  "fields": {
+    "app_label": "products",
+    "model": "productimage"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 11,
+  "fields": {
+    "app_label": "products",
+    "model": "productpricehistory"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 12,
+  "fields": {
+    "app_label": "products",
+    "model": "productvariant"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 13,
+  "fields": {
+    "app_label": "products",
+    "model": "selleroffer"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 14,
+  "fields": {
+    "app_label": "products",
+    "model": "sellerofferpricehistory"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 15,
+  "fields": {
+    "app_label": "accounts",
+    "model": "customuser"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 16,
+  "fields": {
+    "app_label": "accounts",
+    "model": "profile"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 17,
+  "fields": {
+    "app_label": "sellers",
+    "model": "seller"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 18,
+  "fields": {
+    "app_label": "sellers",
+    "model": "sellerprofile"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 19,
+  "fields": {
+    "app_label": "orders",
+    "model": "cart"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 20,
+  "fields": {
+    "app_label": "orders",
+    "model": "order"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 21,
+  "fields": {
+    "app_label": "orders",
+    "model": "orderitem"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 22,
+  "fields": {
+    "app_label": "orders",
+    "model": "wishlist"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 23,
+  "fields": {
+    "app_label": "orders",
+    "model": "cartitem"
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "wkx165sj65i6zzbxu7acvnw693g55md9",
+  "fields": {
+    "session_data": ".eJxVjMsOwiAURP-FtSFcytOle7-BXC5UqgaS0q6M_26b1ERnM4tzZl4s4LqUsPY8hymxMxMevmGnXxqRHrnuSrpjvTVOrS7zFPmu8IN2fm0pPy-H-3dQsJdtDWmIgEYqkYVGJ6yTUhoLCNZTBGWUIIVoyBEOEIUeMfutSGs0o1Ls_QEy8Tk5:1utqwE:w6Wd5tRuf--1RxpFc4J4Q6zevDnf-4M1qZuJ8PYNGn0",
+    "expire_date": "2025-09-17T17:06:26.928Z"
+  }
+},
+{
+  "model": "products.category",
+  "pk": 6,
+  "fields": {
+    "name": "الکترونیک",
+    "en_name": "electronics",
+    "description": "شامل تمامی دستگاه‌های الکترونیکی و لوازم دیجیتال",
+    "parent": null
+  }
+},
+{
+  "model": "products.category",
+  "pk": 7,
+  "fields": {
+    "name": "گیمینگ",
+    "en_name": "gaming",
+    "description": "تجهیزات و لوازم مخصوص بازی",
+    "parent": null
+  }
+},
+{
+  "model": "products.category",
+  "pk": 8,
+  "fields": {
+    "name": "پوشیدنی",
+    "en_name": "wearables",
+    "description": "لوازم قابل پوشیدن و هوشمند",
+    "parent": null
+  }
+},
+{
+  "model": "products.category",
+  "pk": 9,
+  "fields": {
+    "name": "لوازم خانگی",
+    "en_name": "home_appliances",
+    "description": "وسایل و تجهیزات منزل",
+    "parent": null
+  }
+},
+{
+  "model": "products.category",
+  "pk": 10,
+  "fields": {
+    "name": "مبلمان",
+    "en_name": "furniture",
+    "description": "اثاثیه و دکوراسیون منزل",
+    "parent": null
+  }
+},
+{
+  "model": "products.category",
+  "pk": 11,
+  "fields": {
+    "name": "پوشاک",
+    "en_name": "clothing",
+    "description": "انواع لباس و اکسسوری",
+    "parent": null
+  }
+},
+{
+  "model": "products.category",
+  "pk": 12,
+  "fields": {
+    "name": "کتاب و لوازم التحریر",
+    "en_name": "books_stationery",
+    "description": "کتاب، مجله و لوازم تحریر",
+    "parent": null
+  }
+},
+{
+  "model": "products.category",
+  "pk": 13,
+  "fields": {
+    "name": "خوراکی و نوشیدنی",
+    "en_name": "food_beverages",
+    "description": "مواد غذایی و نوشیدنی",
+    "parent": null
+  }
+},
+{
+  "model": "products.category",
+  "pk": 14,
+  "fields": {
+    "name": "موبایل",
+    "en_name": "mobile",
+    "description": "گوشی‌های هوشمند و اکسسوری‌ها",
+    "parent": 6
+  }
+},
+{
+  "model": "products.category",
+  "pk": 15,
+  "fields": {
+    "name": "لپ تاپ",
+    "en_name": "laptop",
+    "description": "رایانه‌های قابل حمل",
+    "parent": 6
+  }
+},
+{
+  "model": "products.category",
+  "pk": 16,
+  "fields": {
+    "name": "تلویزیون",
+    "en_name": "tv",
+    "description": "انواع تلویزیون‌های هوشمند و معمولی",
+    "parent": 6
+  }
+},
+{
+  "model": "products.category",
+  "pk": 17,
+  "fields": {
+    "name": "هدفون",
+    "en_name": "headphone",
+    "description": "هدست‌ها و هدفون‌های بی‌سیم و باسیم",
+    "parent": 6
+  }
+},
+{
+  "model": "products.category",
+  "pk": 18,
+  "fields": {
+    "name": "کنسول بازی",
+    "en_name": "game_console",
+    "description": "PS5, Xbox و غیره",
+    "parent": 7
+  }
+},
+{
+  "model": "products.category",
+  "pk": 19,
+  "fields": {
+    "name": "کیبورد گیمینگ",
+    "en_name": "gaming_keyboard",
+    "description": "صفحه کلیدهای مخصوص بازی",
+    "parent": 7
+  }
+},
+{
+  "model": "products.category",
+  "pk": 20,
+  "fields": {
+    "name": "ماوس گیمینگ",
+    "en_name": "gaming_mouse",
+    "description": "ماوس‌های حرفه‌ای",
+    "parent": 7
+  }
+},
+{
+  "model": "products.category",
+  "pk": 21,
+  "fields": {
+    "name": "مانیتور گیمینگ",
+    "en_name": "gaming_monitor",
+    "description": "نمایشگرهای تخصصی",
+    "parent": 7
+  }
+},
+{
+  "model": "products.category",
+  "pk": 22,
+  "fields": {
+    "name": "ساعت هوشمند",
+    "en_name": "smartwatch",
+    "description": "اپل واچ، سامسونگ گلکسی واچ",
+    "parent": 8
+  }
+},
+{
+  "model": "products.category",
+  "pk": 23,
+  "fields": {
+    "name": "دستبند هوشمند",
+    "en_name": "fitness_band",
+    "description": "ردیاب‌های سلامتی",
+    "parent": 8
+  }
+},
+{
+  "model": "products.category",
+  "pk": 24,
+  "fields": {
+    "name": "هدست VR",
+    "en_name": "vr_headset",
+    "description": "عینک‌های واقعیت مجازی",
+    "parent": 8
+  }
+},
+{
+  "model": "products.category",
+  "pk": 25,
+  "fields": {
+    "name": "آشپزخانه",
+    "en_name": "kitchen",
+    "description": "یخچال، ماکروویو، اجاق گاز",
+    "parent": 9
+  }
+},
+{
+  "model": "products.category",
+  "pk": 26,
+  "fields": {
+    "name": "شستشو",
+    "en_name": "washing",
+    "description": "لباسشویی، ماشین ظرفشویی",
+    "parent": 9
+  }
+},
+{
+  "model": "products.category",
+  "pk": 27,
+  "fields": {
+    "name": "تهویه",
+    "en_name": "hvac",
+    "description": "کولر، بخاری، تصفیه هوا",
+    "parent": 9
+  }
+},
+{
+  "model": "products.category",
+  "pk": 28,
+  "fields": {
+    "name": "جاروبرقی",
+    "en_name": "vacuum_cleaner",
+    "description": "انواع جاروبرقی",
+    "parent": 9
+  }
+},
+{
+  "model": "products.category",
+  "pk": 29,
+  "fields": {
+    "name": "مبل",
+    "en_name": "sofa",
+    "description": "کاناپه و مبل راحتی",
+    "parent": 10
+  }
+},
+{
+  "model": "products.category",
+  "pk": 30,
+  "fields": {
+    "name": "میز",
+    "en_name": "table",
+    "description": "میز ناهارخوری، تحریر، جلومبلی",
+    "parent": 10
+  }
+},
+{
+  "model": "products.category",
+  "pk": 31,
+  "fields": {
+    "name": "صندلی",
+    "en_name": "chair",
+    "description": "صندلی اداری، راحتی",
+    "parent": 10
+  }
+},
+{
+  "model": "products.category",
+  "pk": 32,
+  "fields": {
+    "name": "تخت خواب",
+    "en_name": "bed",
+    "description": "تخت‌های یک نفره و دو نفره",
+    "parent": 10
+  }
+},
+{
+  "model": "products.category",
+  "pk": 33,
+  "fields": {
+    "name": "مردانه",
+    "en_name": "mens_clothing",
+    "description": "پیراهن، شلوار، کت",
+    "parent": 11
+  }
+},
+{
+  "model": "products.category",
+  "pk": 34,
+  "fields": {
+    "name": "زنانه",
+    "en_name": "womens_clothing",
+    "description": "مانتو، شلوار، تونیک",
+    "parent": 11
+  }
+},
+{
+  "model": "products.category",
+  "pk": 35,
+  "fields": {
+    "name": "کفش",
+    "en_name": "shoes",
+    "description": "کفش ورزشی، رسمی، کتانی",
+    "parent": 11
+  }
+},
+{
+  "model": "products.category",
+  "pk": 36,
+  "fields": {
+    "name": "اکسسوری",
+    "en_name": "accessories",
+    "description": "کیف، ساعت، زیورآلات",
+    "parent": 11
+  }
+},
+{
+  "model": "products.category",
+  "pk": 37,
+  "fields": {
+    "name": "کتاب",
+    "en_name": "books",
+    "description": "رمان، علمی، کودک",
+    "parent": 12
+  }
+},
+{
+  "model": "products.category",
+  "pk": 38,
+  "fields": {
+    "name": "دفتر و کاغذ",
+    "en_name": "notebooks_paper",
+    "description": "دفتر، کاغذ A4",
+    "parent": 12
+  }
+},
+{
+  "model": "products.category",
+  "pk": 39,
+  "fields": {
+    "name": "قلم و مداد",
+    "en_name": "pens_pencils",
+    "description": "خودکار، مداد رنگی",
+    "parent": 12
+  }
+},
+{
+  "model": "products.category",
+  "pk": 40,
+  "fields": {
+    "name": "لوازم هنری",
+    "en_name": "art_supplies",
+    "description": "رنگ، قلم موی، بوم",
+    "parent": 12
+  }
+},
+{
+  "model": "products.category",
+  "pk": 41,
+  "fields": {
+    "name": "میوه و سبزیجات",
+    "en_name": "fruits_vegetables",
+    "description": "تازه و خشک",
+    "parent": 13
+  }
+},
+{
+  "model": "products.category",
+  "pk": 42,
+  "fields": {
+    "name": "لبنیات",
+    "en_name": "dairy_products",
+    "description": "شیر، پنیر، ماست",
+    "parent": 13
+  }
+},
+{
+  "model": "products.category",
+  "pk": 43,
+  "fields": {
+    "name": "نوشیدنی",
+    "en_name": "beverages",
+    "description": "آب، نوشابه، چای",
+    "parent": 13
+  }
+},
+{
+  "model": "products.category",
+  "pk": 44,
+  "fields": {
+    "name": "خشکبار",
+    "en_name": "nuts_dried_fruits",
+    "description": "بادام، پسته، خشکبار",
+    "parent": 13
+  }
+},
+{
+  "model": "products.productbase",
+  "pk": 1,
+  "fields": {
+    "name": "گوشی موبایل سامسونگ مدل Galaxy S24 Ultra دو سیم کارت ظرفیت 256 گیگابایت و رم 12 گیگابایت - ویتنام",
+    "description": "همواره گوشی‌های هوشمند پرچمدار سامسونگ توانسته‌اند با بهره بردن از مشخصات فنی قدرتمند، توجه هر بیننده‌ای را به خود جلب کنند و همواره رقیبان سرسختی برای برند‌های دیگر فعال در این عرصه بودند و این بار نوبت به قدرت‌نمایی سامسونگ Galaxy S24 Ultra رسیده است. پرچمداری تا دندان مسلح که خط و نشان جدی برای رقیبان کشیده است. سامسونگ در زمینه طراحی تغییرات چشم‌گیری برای این گوشی در نظر نگرفته است و تنها خبری از خمیدگی صفحه‌نمایش در قسمت کناری نیست و این با را صفحه‌نمایش تخت و جذاب رو‌به‌رو هستیم. صفحه‌نمایش 6.8 اینچی این گوشی با رزولوشن 1440×3120 که توانایی نمایش 505 پیکسل در هر اینچ را دارد، وضوح تصویر دقیق، جذاب و چشم‌نوازی را در اختیارتان قرار می‌دهد. نرخ بروزرسانی 120 هرتز هم سبب شده تا نه‌تنها در فعالیت‌های روزمره، بلکه برای مثال در اجرای بازی‌های سنگین و تماشای ویدیو‌های باکیفیت، عملکرد بسیار روان و بدون لگ را شاهد باشید. یک سنسور دوربین اصلی با رزولوشن 200 مگاپیکسل در کنار سنسور 12 مگاپیسل پریسکوپ با قابلیت زوم 5 برابری اپتیکال (زوم بدون کم شدن کیفیت) به همراه سنسور 10 مگاپیکسل تله‌فوتو با قابلیت زوم 3 برابری اپتیکال و سنسور 12 مگاپیکسل فوق‌عریض یا همان اولترا واید برای قسمت پشتی سامسونگ Galaxy S24 Ultra در نظر گرفته شده است. در بخش عکاسی خیالتان راحت باشد، چون با گوشی پرچمداری رو‌به‌رو هستید که بدون شک حتی نیاز‌های یک عکاس حرفه‌ای را هم بر‌آورده می‌کند. برای دوربین سلفی هم سنسور با رزولوشن 12 مگاپیکسل در نظر گرفته شده است. اما بدون شک اصلی‌ترین تغییر این گوشی به نسبت نسل قبلی، حضور پردازنده اسنپدراگون 8 نسل 3 شرکت کوالکام است. پردازنده‌ای که تاثیر مستقیم در تک‌تک عملکرد‌های بخش‌های مختلف این گوشی دارد. از نظر اجرای بازی‌های سنگین هم خیالتان کاملا راحت باشد که عملکردی روان، با‌کیفیت و بدون لگ را شاهد خواهید بود. باتری با میزان ظرفیت 5000 میلی‌آمپرساعت در کنار پشتیبانی از فناوری شارژ سریع 45 وات، از دیگر مشخصات در نظر گرفته شده هستند. در مجموع باید بگوییم که اگر به دنبال یک پرچمدار با اصالت هستید که نیاز‌های شما را به‌خوبی در حد و اندازه یک پرچمدار بر‌آورده کند، سامسونگ Galaxy S24 Ultra می‌تواند گزینه بسیار مناسبی برای شما باشد.👌",
+    "category": 6,
+    "attributes": {
+      "brand": "SAMSUNG",
+      "model": "Galaxy S24 Ultra",
+      "weight": "233",
+      "dimensions": {
+        "length": "162.3",
+        "width": "19",
+        "height": "8.6"
+      },
+      "قابلیت های مقاومتی": "مقاوم در برابر نفوذ آب",
+      "نرخ به روز رسانی تصویر": "120 هرتز",
+      "اندازه ": "۶.۸ اینچ"
+    },
+    "created_at": "2025-09-03T17:23:47.538Z",
+    "updated_at": "2025-09-03T17:23:47.538Z"
+  }
+},
+{
+  "model": "products.productbase",
+  "pk": 2,
+  "fields": {
+    "name": "کنسول بازی مایکروسافت مدل Xbox Series X ظرفیت 1 ترابایت",
+    "description": "کنسول بازی مایکروسافت مدل Xbox Series X، با ظرفیت یک ترابایت، به عنوان کنسول قدرتمند نسل نهمی این شرکت معرفی شد. این کنسول قدرت بیشتری نسبت به مدل Series S دارد و می‌تواند جدیدترین و چشم‌نوازترین بازی‌های ویدیویی روز رو با وضوح حداکثری 4K و نرخ حداکثری 120 فریم بر ثانیه اجرا کند. خنک کننده این کنسول، هوای گرم را توسط فن خنک‌کننده بزرگ خود از قسمت بالای کنسول خارج می‌کند، البته طراحی مهندسی شده و مینیمال این کنسول اجازه می‌دهد آن را هم به صورت افقی و هم عمودی روی سطوح مختلف قرار داد. در مجموع، اگر از جمله علاقه‌مندان به بازی‌های ویدیویی هستید و همچنین به دنبال گزینه‌ای به‌روز و قدرتمند می‌گردید، Xbox Series X می‌تواند گزینه‌ای فوق‌العاده برای شما باشد. ناگفته نماند که سرویس GamePass که در پلتفرم‌های مایکروسافت در دسترس قرار دارد، می‌تواند به ارزش خرید این کنسول بیفزاید.",
+    "category": 7,
+    "attributes": {
+      "brand": "Microsoft",
+      "model": "Xbox Series X",
+      "weight": "4450",
+      "dimensions": {
+        "length": "15.1",
+        "width": "15.1",
+        "height": "30.1"
+      },
+      "رنگ": "مشکی",
+      "حافظه": "۱ ترابایت"
+    },
+    "created_at": "2025-09-03T17:52:34.885Z",
+    "updated_at": "2025-09-03T17:52:34.885Z"
+  }
+},
+{
+  "model": "products.productbase",
+  "pk": 3,
+  "fields": {
+    "name": "ساعت هوشمند سامسونگ مدل Galaxy Watch Ultra دارای قابلیت های کنترل موسیقی (Music Player)، قابلیت مکالمه از طریق بلوتوث، قابلیت تغییر طرح ساعت یا تم، صفحه همیشه روشن (Always-on Display)، پشتیبانی از دستیار صوتی بند سیلیکون",
+    "description": "در سال‌های اخیر، بازار ساعت‌های هوشمند شاهد رشد چشم‌گیری بوده است. شرکت‌های فناوری برای جلب توجه کاربران، همواره در تلاش برای ارائه محصولات نوآورانه و پیشرفته هستند. سامسونگ نیز به عنوان یکی از پیشگامان این حوزه، با معرفی ساعت هوشمند Galaxy Watch 7 Ultra قصد دارد جایگاه خود را در بازار تثبیت کند. این ساعت هوشمند با طراحی زیبا و مجهز به ویژگی‌های متنوع، می‌تواند انتخاب مناسبی برای کاربران مختلف باشد. در این مقاله، به بررسی جزئیات این محصول جدید سامسونگ، از جمله طراحی، امکانات، عملکرد و مزایا و معایب آن خواهیم پرداخت تا کاربران بتوانند تصمیم آگاهانه‌تری در خصوص خرید آن اتخاذ کنند.",
+    "category": 8,
+    "attributes": {
+      "brand": "Samsung",
+      "model": "Galaxy Watch Ultra",
+      "weight": "60.5",
+      "dimensions": {
+        "length": "47.4",
+        "width": "47.1",
+        "height": "12.1"
+      },
+      "رنگ": "نارنجی"
+    },
+    "created_at": "2025-09-03T17:55:57.242Z",
+    "updated_at": "2025-09-03T17:55:57.242Z"
+  }
+},
+{
+  "model": "products.productbase",
+  "pk": 4,
+  "fields": {
+    "name": "جاروبرقی 2100 وات دوو مدل DVC-LH22R",
+    "description": "جاروبرقی دوو مدل DVC-LH22R یک وسیله برقی است که برای تمیز کردن محیط‌های مختلف استفاده می‌شود. این جاروبرقی دارای ظرفیت ۵ لیتری برای جمع‌آوری گرد و غبار است که این امکان را به کاربر می‌دهد تا بدون نیاز به تخلیه مکرر آن را استفاده کند. همچنین، این جاروبرقی دارای سیم برق ۸ متری است که این ویژگی به کاربر اجازه می‌دهد تا به راحتی در محیط‌های مختلف از آن استفاده کند بدون نیاز به تغییر مکان پریز برق. قدرت مکش این جاروبرقی ۶۵۰ وات است که این مقدار قدرت مکش بالا به کاربر امکان می‌دهد تا حتی از ذرات‌ریز و بزرگ گرد و غبار را به راحتی جمع‌آوری کند. موتور این جاروبرقی دارای قدرت ۲۱۰۰ وات است که این قدرت بالا به جاروبرقی امکان می‌دهد تا به صورت مداوم و بدون وقفه کار کند و از کارایی بالایی برخوردار باشد جاروبرقی DVC-LH22R یکی از محصولات با کیفیت و عمل‌کرد بالای شرکت دوو است. این جاروبرقی دارای ویژگی‌هایی از قبیل جابجایی آسان و کم‌صدا بودن است که آن را به یک گزینه عالی برای نظافت منازل و محیط‌های مختلف تبدیل کرده است. این جاروبرقی دارای توان مکش ۶۵۰ وات و توان موتور ۲۱۰۰ وات است. همچنین دارای ظرفیت ۵ لیتر و طول کابل برق ۸ متر است. با این ویژگی‌ها، DVC-LH22R به راحتی می‌تواند با ذرات آلودگی مختلف و حتی با مواد سخت‌تر مانند موهای حیوانات خانگی مقابله کند. این جاروبرقی ابعادی به اندازه ۳۹۰x۵۶۰x۳۲۰ میلی‌متر دارد و وزن آن هم بسیار سبک است که این امر نشان از قابلیت جابجایی و حمل آسان آن دارد. از سوی دیگر، سطح صدای عمل‌کرد این جاروبرقی هم مورد توجه قرار گرفته است و به نظر می‌رسد که میزان صدای آن در حدود ۷۰ دسی‌بل (decibel) است که برای مشتریان بسیار مهم است. مشتریان به دنبال کاهش سطح نویز و صدای عمل‌کرد جاروبرقی هستند و این موضوع برای آن‌ها اهمیت بسیاری دارد. بهبود عمل‌کرد و کاهش سطح نویز موتورهای جاروبرقی، نقش مهمی در انتخاب و خرید آنلاین محصولات دارد و برای تولیدکنندگان این محصولات، اهمیت ویژه‌ای دارد تا نیازهای مشتریان را برآورده سازند و بازار خود را تقویت کنند. با توجه به معرفی و بررسی ویژگی‌های جاروبرقی DVC-LH22R، می‌توان نتیجه گرفت که این محصول با قدرت مکش بالا، صدای کمتر، و طول کابل برق مناسب، یکی از بهترین گزینه‌ها برای نظافت منزل و محیط‌های مختلف است.",
+    "category": 9,
+    "attributes": {
+      "brand": "Deawoo",
+      "model": "DVC-LH22R",
+      "رنگ": "مشکی"
+    },
+    "created_at": "2025-09-03T17:58:51.458Z",
+    "updated_at": "2025-09-03T17:58:51.458Z"
+  }
+},
+{
+  "model": "products.productbase",
+  "pk": 5,
+  "fields": {
+    "name": "کتاب سکوت بره ها اثر توماس هریس انتشارات نیک فرجام",
+    "description": "این کتاب بر پایه وقایع حقیقی نگاشته شده است. توماس هریس به هیچ وجه قصد خلق اثری جنایی و پلیسی را ندارد، بلکه می خواهد جنایت های یک جامعه را با دیدی روان شناختی و با استفاده از علوم رفتاری بنگرد. توماس هریس، وحشت را با معنای حقیقی به خواننده اهدا می کند. البته قصد او از نگارش این داستان به هیچ وجه ایجاد اثری هولناک نیست؛ بلکه وحشت به طور اتوماتیک در قالب داستان جا گرفته است. او در این کتاب آن چنان در روح و روان انسان های عصر جدید کندوکاو می کند و آن چنان به پردازش عنصرهایی که به عنوان مجرم در جامعه شناخته می شوند، می پردازد که همگان را مبهوت و متعجب می سازد.ژانر جنایی سكوت بره ها، هم خوناشام دارد و هم قاتل زنجیره ای. به نوعی فضای فانتزی وحشت با فضای واقعی پلیسی تلفیق شده است. این فانتزی زمانی كاملتر می شود كه خوناشام در یك رابطه پیچیده با یك بازپرس جنایی به حل معمای دستگیری قاتل كمك می كند. یك شخصیت پردازی سه جانبه و درهم تنیده با جزییات حساب شده در ابعاد شخصیتی و روانشناختی هر یك از پرسوناژها می باشد.",
+    "category": 12,
+    "attributes": {},
+    "created_at": "2025-09-03T18:23:13.725Z",
+    "updated_at": "2025-09-03T18:23:13.725Z"
+  }
+},
+{
+  "model": "products.product",
+  "pk": 1,
+  "fields": {
+    "seller": 1,
+    "base_product": 1,
+    "name": "گوشی موبایل سامسونگ مدل Galaxy S24 Ultra دو سیم کارت ظرفیت 256 گیگابایت و رم 12 گیگابایت - ویتنام",
+    "description": "همواره گوشی‌های هوشمند پرچمدار سامسونگ توانسته‌اند با بهره بردن از مشخصات فنی قدرتمند، توجه هر بیننده‌ای را به خود جلب کنند و همواره رقیبان سرسختی برای برند‌های دیگر فعال در این عرصه بودند و این بار نوبت به قدرت‌نمایی سامسونگ Galaxy S24 Ultra رسیده است. پرچمداری تا دندان مسلح که خط و نشان جدی برای رقیبان کشیده است. سامسونگ در زمینه طراحی تغییرات چشم‌گیری برای این گوشی در نظر نگرفته است و تنها خبری از خمیدگی صفحه‌نمایش در قسمت کناری نیست و این با را صفحه‌نمایش تخت و جذاب رو‌به‌رو هستیم. صفحه‌نمایش 6.8 اینچی این گوشی با رزولوشن 1440×3120 که توانایی نمایش 505 پیکسل در هر اینچ را دارد، وضوح تصویر دقیق، جذاب و چشم‌نوازی را در اختیارتان قرار می‌دهد. نرخ بروزرسانی 120 هرتز هم سبب شده تا نه‌تنها در فعالیت‌های روزمره، بلکه برای مثال در اجرای بازی‌های سنگین و تماشای ویدیو‌های باکیفیت، عملکرد بسیار روان و بدون لگ را شاهد باشید. یک سنسور دوربین اصلی با رزولوشن 200 مگاپیکسل در کنار سنسور 12 مگاپیسل پریسکوپ با قابلیت زوم 5 برابری اپتیکال (زوم بدون کم شدن کیفیت) به همراه سنسور 10 مگاپیکسل تله‌فوتو با قابلیت زوم 3 برابری اپتیکال و سنسور 12 مگاپیکسل فوق‌عریض یا همان اولترا واید برای قسمت پشتی سامسونگ Galaxy S24 Ultra در نظر گرفته شده است. در بخش عکاسی خیالتان راحت باشد، چون با گوشی پرچمداری رو‌به‌رو هستید که بدون شک حتی نیاز‌های یک عکاس حرفه‌ای را هم بر‌آورده می‌کند. برای دوربین سلفی هم سنسور با رزولوشن 12 مگاپیکسل در نظر گرفته شده است. اما بدون شک اصلی‌ترین تغییر این گوشی به نسبت نسل قبلی، حضور پردازنده اسنپدراگون 8 نسل 3 شرکت کوالکام است. پردازنده‌ای که تاثیر مستقیم در تک‌تک عملکرد‌های بخش‌های مختلف این گوشی دارد. از نظر اجرای بازی‌های سنگین هم خیالتان کاملا راحت باشد که عملکردی روان، با‌کیفیت و بدون لگ را شاهد خواهید بود. باتری با میزان ظرفیت 5000 میلی‌آمپرساعت در کنار پشتیبانی از فناوری شارژ سریع 45 وات، از دیگر مشخصات در نظر گرفته شده هستند. در مجموع باید بگوییم که اگر به دنبال یک پرچمدار با اصالت هستید که نیاز‌های شما را به‌خوبی در حد و اندازه یک پرچمدار بر‌آورده کند، سامسونگ Galaxy S24 Ultra می‌تواند گزینه بسیار مناسبی برای شما باشد.👌",
+    "price": "95300000.00",
+    "stock": 30,
+    "created_at": "2025-09-03T17:23:47.538Z",
+    "updated_at": "2025-09-03T17:23:47.538Z"
+  }
+},
+{
+  "model": "products.product",
+  "pk": 2,
+  "fields": {
+    "seller": 1,
+    "base_product": 2,
+    "name": "کنسول بازی مایکروسافت مدل Xbox Series X ظرفیت 1 ترابایت",
+    "description": "کنسول بازی مایکروسافت مدل Xbox Series X، با ظرفیت یک ترابایت، به عنوان کنسول قدرتمند نسل نهمی این شرکت معرفی شد. این کنسول قدرت بیشتری نسبت به مدل Series S دارد و می‌تواند جدیدترین و چشم‌نوازترین بازی‌های ویدیویی روز رو با وضوح حداکثری 4K و نرخ حداکثری 120 فریم بر ثانیه اجرا کند. خنک کننده این کنسول، هوای گرم را توسط فن خنک‌کننده بزرگ خود از قسمت بالای کنسول خارج می‌کند، البته طراحی مهندسی شده و مینیمال این کنسول اجازه می‌دهد آن را هم به صورت افقی و هم عمودی روی سطوح مختلف قرار داد. در مجموع، اگر از جمله علاقه‌مندان به بازی‌های ویدیویی هستید و همچنین به دنبال گزینه‌ای به‌روز و قدرتمند می‌گردید، Xbox Series X می‌تواند گزینه‌ای فوق‌العاده برای شما باشد. ناگفته نماند که سرویس GamePass که در پلتفرم‌های مایکروسافت در دسترس قرار دارد، می‌تواند به ارزش خرید این کنسول بیفزاید.",
+    "price": "64000000.00",
+    "stock": 5,
+    "created_at": "2025-09-03T17:52:34.894Z",
+    "updated_at": "2025-09-03T17:52:34.894Z"
+  }
+},
+{
+  "model": "products.product",
+  "pk": 3,
+  "fields": {
+    "seller": 1,
+    "base_product": 3,
+    "name": "ساعت هوشمند سامسونگ مدل Galaxy Watch Ultra دارای قابلیت های کنترل موسیقی (Music Player)، قابلیت مکالمه از طریق بلوتوث، قابلیت تغییر طرح ساعت یا تم، صفحه همیشه روشن (Always-on Display)، پشتیبانی از دستیار صوتی بند سیلیکون",
+    "description": "در سال‌های اخیر، بازار ساعت‌های هوشمند شاهد رشد چشم‌گیری بوده است. شرکت‌های فناوری برای جلب توجه کاربران، همواره در تلاش برای ارائه محصولات نوآورانه و پیشرفته هستند. سامسونگ نیز به عنوان یکی از پیشگامان این حوزه، با معرفی ساعت هوشمند Galaxy Watch 7 Ultra قصد دارد جایگاه خود را در بازار تثبیت کند. این ساعت هوشمند با طراحی زیبا و مجهز به ویژگی‌های متنوع، می‌تواند انتخاب مناسبی برای کاربران مختلف باشد. در این مقاله، به بررسی جزئیات این محصول جدید سامسونگ، از جمله طراحی، امکانات، عملکرد و مزایا و معایب آن خواهیم پرداخت تا کاربران بتوانند تصمیم آگاهانه‌تری در خصوص خرید آن اتخاذ کنند.",
+    "price": "31990000.00",
+    "stock": 14,
+    "created_at": "2025-09-03T17:55:57.250Z",
+    "updated_at": "2025-09-03T17:55:57.250Z"
+  }
+},
+{
+  "model": "products.product",
+  "pk": 4,
+  "fields": {
+    "seller": 1,
+    "base_product": 4,
+    "name": "جاروبرقی 2100 وات دوو مدل DVC-LH22R",
+    "description": "جاروبرقی دوو مدل DVC-LH22R یک وسیله برقی است که برای تمیز کردن محیط‌های مختلف استفاده می‌شود. این جاروبرقی دارای ظرفیت ۵ لیتری برای جمع‌آوری گرد و غبار است که این امکان را به کاربر می‌دهد تا بدون نیاز به تخلیه مکرر آن را استفاده کند. همچنین، این جاروبرقی دارای سیم برق ۸ متری است که این ویژگی به کاربر اجازه می‌دهد تا به راحتی در محیط‌های مختلف از آن استفاده کند بدون نیاز به تغییر مکان پریز برق. قدرت مکش این جاروبرقی ۶۵۰ وات است که این مقدار قدرت مکش بالا به کاربر امکان می‌دهد تا حتی از ذرات‌ریز و بزرگ گرد و غبار را به راحتی جمع‌آوری کند. موتور این جاروبرقی دارای قدرت ۲۱۰۰ وات است که این قدرت بالا به جاروبرقی امکان می‌دهد تا به صورت مداوم و بدون وقفه کار کند و از کارایی بالایی برخوردار باشد جاروبرقی DVC-LH22R یکی از محصولات با کیفیت و عمل‌کرد بالای شرکت دوو است. این جاروبرقی دارای ویژگی‌هایی از قبیل جابجایی آسان و کم‌صدا بودن است که آن را به یک گزینه عالی برای نظافت منازل و محیط‌های مختلف تبدیل کرده است. این جاروبرقی دارای توان مکش ۶۵۰ وات و توان موتور ۲۱۰۰ وات است. همچنین دارای ظرفیت ۵ لیتر و طول کابل برق ۸ متر است. با این ویژگی‌ها، DVC-LH22R به راحتی می‌تواند با ذرات آلودگی مختلف و حتی با مواد سخت‌تر مانند موهای حیوانات خانگی مقابله کند. این جاروبرقی ابعادی به اندازه ۳۹۰x۵۶۰x۳۲۰ میلی‌متر دارد و وزن آن هم بسیار سبک است که این امر نشان از قابلیت جابجایی و حمل آسان آن دارد. از سوی دیگر، سطح صدای عمل‌کرد این جاروبرقی هم مورد توجه قرار گرفته است و به نظر می‌رسد که میزان صدای آن در حدود ۷۰ دسی‌بل (decibel) است که برای مشتریان بسیار مهم است. مشتریان به دنبال کاهش سطح نویز و صدای عمل‌کرد جاروبرقی هستند و این موضوع برای آن‌ها اهمیت بسیاری دارد. بهبود عمل‌کرد و کاهش سطح نویز موتورهای جاروبرقی، نقش مهمی در انتخاب و خرید آنلاین محصولات دارد و برای تولیدکنندگان این محصولات، اهمیت ویژه‌ای دارد تا نیازهای مشتریان را برآورده سازند و بازار خود را تقویت کنند. با توجه به معرفی و بررسی ویژگی‌های جاروبرقی DVC-LH22R، می‌توان نتیجه گرفت که این محصول با قدرت مکش بالا، صدای کمتر، و طول کابل برق مناسب، یکی از بهترین گزینه‌ها برای نظافت منزل و محیط‌های مختلف است.",
+    "price": "10941000.00",
+    "stock": 23,
+    "created_at": "2025-09-03T17:58:51.473Z",
+    "updated_at": "2025-09-03T17:58:51.473Z"
+  }
+},
+{
+  "model": "products.product",
+  "pk": 5,
+  "fields": {
+    "seller": 1,
+    "base_product": 5,
+    "name": "کتاب سکوت بره ها اثر توماس هریس انتشارات نیک فرجام",
+    "description": "این کتاب بر پایه وقایع حقیقی نگاشته شده است. توماس هریس به هیچ وجه قصد خلق اثری جنایی و پلیسی را ندارد، بلکه می خواهد جنایت های یک جامعه را با دیدی روان شناختی و با استفاده از علوم رفتاری بنگرد. توماس هریس، وحشت را با معنای حقیقی به خواننده اهدا می کند. البته قصد او از نگارش این داستان به هیچ وجه ایجاد اثری هولناک نیست؛ بلکه وحشت به طور اتوماتیک در قالب داستان جا گرفته است. او در این کتاب آن چنان در روح و روان انسان های عصر جدید کندوکاو می کند و آن چنان به پردازش عنصرهایی که به عنوان مجرم در جامعه شناخته می شوند، می پردازد که همگان را مبهوت و متعجب می سازد.ژانر جنایی سكوت بره ها، هم خوناشام دارد و هم قاتل زنجیره ای. به نوعی فضای فانتزی وحشت با فضای واقعی پلیسی تلفیق شده است. این فانتزی زمانی كاملتر می شود كه خوناشام در یك رابطه پیچیده با یك بازپرس جنایی به حل معمای دستگیری قاتل كمك می كند. یك شخصیت پردازی سه جانبه و درهم تنیده با جزییات حساب شده در ابعاد شخصیتی و روانشناختی هر یك از پرسوناژها می باشد.",
+    "price": "280000.00",
+    "stock": 50,
+    "created_at": "2025-09-03T18:23:13.735Z",
+    "updated_at": "2025-09-03T18:23:13.735Z"
+  }
+},
+{
+  "model": "products.productimage",
+  "pk": 1,
+  "fields": {
+    "product": 1,
+    "image": "product_images/c23b49b0be1c4ae5b2a3d7a3281d2f1731065243_1726037574.webp",
+    "alt_text": "c23b49b0be1c4ae5b2a3d7a3281d2f1731065243_1726037574.webp",
+    "is_featured": true,
+    "created_at": "2025-09-03T17:23:47.546Z"
+  }
+},
+{
+  "model": "products.productimage",
+  "pk": 2,
+  "fields": {
+    "product": 1,
+    "image": "product_images/99adf3ff60680944eb80d1201791af5af6f64a67_1705751970.webp",
+    "alt_text": "99adf3ff60680944eb80d1201791af5af6f64a67_1705751970.webp",
+    "is_featured": false,
+    "created_at": "2025-09-03T17:23:47.546Z"
+  }
+},
+{
+  "model": "products.productimage",
+  "pk": 3,
+  "fields": {
+    "product": 1,
+    "image": "product_images/2b95ff8f5246bfaa452a190e8fa880fb7ed78aef_1705751970.webp",
+    "alt_text": "2b95ff8f5246bfaa452a190e8fa880fb7ed78aef_1705751970.webp",
+    "is_featured": false,
+    "created_at": "2025-09-03T17:23:47.546Z"
+  }
+},
+{
+  "model": "products.productimage",
+  "pk": 4,
+  "fields": {
+    "product": 1,
+    "image": "product_images/bab3397fb599c050f24b9fa7277b708f0ccd6f42_1727516157.webp",
+    "alt_text": "bab3397fb599c050f24b9fa7277b708f0ccd6f42_1727516157.webp",
+    "is_featured": false,
+    "created_at": "2025-09-03T17:23:47.546Z"
+  }
+},
+{
+  "model": "products.productimage",
+  "pk": 5,
+  "fields": {
+    "product": 1,
+    "image": "product_images/8934e940021cddf0920a7c17f227f97464bbf700_1727769974.webp",
+    "alt_text": "8934e940021cddf0920a7c17f227f97464bbf700_1727769974.webp",
+    "is_featured": false,
+    "created_at": "2025-09-03T17:23:47.546Z"
+  }
+},
+{
+  "model": "products.productimage",
+  "pk": 6,
+  "fields": {
+    "product": 1,
+    "image": "product_images/cac5338408efad4d09ce2c1df8e85b8845ff84f2_1705751970.webp",
+    "alt_text": "cac5338408efad4d09ce2c1df8e85b8845ff84f2_1705751970.webp",
+    "is_featured": false,
+    "created_at": "2025-09-03T17:23:47.546Z"
+  }
+},
+{
+  "model": "products.productimage",
+  "pk": 7,
+  "fields": {
+    "product": 2,
+    "image": "product_images/4ecd0a84a3aab6a9fa3df96270b8695fe371a29e_1744529142.webp",
+    "alt_text": "4ecd0a84a3aab6a9fa3df96270b8695fe371a29e_1744529142.webp",
+    "is_featured": true,
+    "created_at": "2025-09-03T17:52:34.894Z"
+  }
+},
+{
+  "model": "products.productimage",
+  "pk": 8,
+  "fields": {
+    "product": 2,
+    "image": "product_images/9a12e47a29bc0c8d00eb2c67d1d9bb26aa8e108a_1744529146.webp",
+    "alt_text": "9a12e47a29bc0c8d00eb2c67d1d9bb26aa8e108a_1744529146.webp",
+    "is_featured": false,
+    "created_at": "2025-09-03T17:52:34.894Z"
+  }
+},
+{
+  "model": "products.productimage",
+  "pk": 9,
+  "fields": {
+    "product": 2,
+    "image": "product_images/9d2b88989b3372ad4bfdf8a670188be868bacbbb_1744529147.webp",
+    "alt_text": "9d2b88989b3372ad4bfdf8a670188be868bacbbb_1744529147.webp",
+    "is_featured": false,
+    "created_at": "2025-09-03T17:52:34.894Z"
+  }
+},
+{
+  "model": "products.productimage",
+  "pk": 10,
+  "fields": {
+    "product": 2,
+    "image": "product_images/9e0087adc741b250d0a6a0908b30579dffa5b7d9_1744529145.webp",
+    "alt_text": "9e0087adc741b250d0a6a0908b30579dffa5b7d9_1744529145.webp",
+    "is_featured": false,
+    "created_at": "2025-09-03T17:52:34.894Z"
+  }
+},
+{
+  "model": "products.productimage",
+  "pk": 11,
+  "fields": {
+    "product": 2,
+    "image": "product_images/8679539184a3bfc4d15f97fc410a6016725594a0_1744529144.webp",
+    "alt_text": "8679539184a3bfc4d15f97fc410a6016725594a0_1744529144.webp",
+    "is_featured": false,
+    "created_at": "2025-09-03T17:52:34.894Z"
+  }
+},
+{
+  "model": "products.productimage",
+  "pk": 12,
+  "fields": {
+    "product": 2,
+    "image": "product_images/bb4af43063a1f0eba167327b0837a382555ae412_1744529144.webp",
+    "alt_text": "bb4af43063a1f0eba167327b0837a382555ae412_1744529144.webp",
+    "is_featured": false,
+    "created_at": "2025-09-03T17:52:34.894Z"
+  }
+},
+{
+  "model": "products.productimage",
+  "pk": 13,
+  "fields": {
+    "product": 3,
+    "image": "product_images/a677414a3b7e96576c9ca7b4aa593a206f9e9fbc_1747411161.webp",
+    "alt_text": "a677414a3b7e96576c9ca7b4aa593a206f9e9fbc_1747411161.webp",
+    "is_featured": true,
+    "created_at": "2025-09-03T17:55:57.250Z"
+  }
+},
+{
+  "model": "products.productimage",
+  "pk": 14,
+  "fields": {
+    "product": 3,
+    "image": "product_images/9debf7a16f50edc2984ef13103d3f870d84a44f3_1721146785.webp",
+    "alt_text": "9debf7a16f50edc2984ef13103d3f870d84a44f3_1721146785.webp",
+    "is_featured": false,
+    "created_at": "2025-09-03T17:55:57.250Z"
+  }
+},
+{
+  "model": "products.productimage",
+  "pk": 15,
+  "fields": {
+    "product": 3,
+    "image": "product_images/a502e60c1cce013faf710b810a9e3736f10c90ed_1728052845.webp",
+    "alt_text": "a502e60c1cce013faf710b810a9e3736f10c90ed_1728052845.webp",
+    "is_featured": false,
+    "created_at": "2025-09-03T17:55:57.250Z"
+  }
+},
+{
+  "model": "products.productimage",
+  "pk": 16,
+  "fields": {
+    "product": 3,
+    "image": "product_images/8390e026b3948f636c4591efce5609557f0fa26d_1721146813.webp",
+    "alt_text": "8390e026b3948f636c4591efce5609557f0fa26d_1721146813.webp",
+    "is_featured": false,
+    "created_at": "2025-09-03T17:55:57.250Z"
+  }
+},
+{
+  "model": "products.productimage",
+  "pk": 17,
+  "fields": {
+    "product": 3,
+    "image": "product_images/ddcb447c9adb44b20a121311dbcb82746f2125b2_1747742319.webp",
+    "alt_text": "ddcb447c9adb44b20a121311dbcb82746f2125b2_1747742319.webp",
+    "is_featured": false,
+    "created_at": "2025-09-03T17:55:57.250Z"
+  }
+},
+{
+  "model": "products.productimage",
+  "pk": 18,
+  "fields": {
+    "product": 4,
+    "image": "product_images/67a1dcc6c11f40a71ce0e2126d46752215d7e403_1754244775.webp",
+    "alt_text": "67a1dcc6c11f40a71ce0e2126d46752215d7e403_1754244775.webp",
+    "is_featured": true,
+    "created_at": "2025-09-03T17:58:51.473Z"
+  }
+},
+{
+  "model": "products.productimage",
+  "pk": 19,
+  "fields": {
+    "product": 4,
+    "image": "product_images/4acecfa016aabb8fffe9115a4639ada8ad256db1_1618851421.webp",
+    "alt_text": "4acecfa016aabb8fffe9115a4639ada8ad256db1_1618851421.webp",
+    "is_featured": false,
+    "created_at": "2025-09-03T17:58:51.473Z"
+  }
+},
+{
+  "model": "products.productimage",
+  "pk": 20,
+  "fields": {
+    "product": 4,
+    "image": "product_images/b838b70ee4a95984def62b88c1835ff83d6b8931_1620042666.webp",
+    "alt_text": "b838b70ee4a95984def62b88c1835ff83d6b8931_1620042666.webp",
+    "is_featured": false,
+    "created_at": "2025-09-03T17:58:51.473Z"
+  }
+},
+{
+  "model": "products.productimage",
+  "pk": 21,
+  "fields": {
+    "product": 4,
+    "image": "product_images/d6ebd50df8c87e8cde0fd3eef0fdd788f8d610e1_1620042664.webp",
+    "alt_text": "d6ebd50df8c87e8cde0fd3eef0fdd788f8d610e1_1620042664.webp",
+    "is_featured": false,
+    "created_at": "2025-09-03T17:58:51.473Z"
+  }
+},
+{
+  "model": "products.productimage",
+  "pk": 22,
+  "fields": {
+    "product": 4,
+    "image": "product_images/f2b779132c5365d2a501767dad6a162dc1831460_1618851409.webp",
+    "alt_text": "f2b779132c5365d2a501767dad6a162dc1831460_1618851409.webp",
+    "is_featured": false,
+    "created_at": "2025-09-03T17:58:51.486Z"
+  }
+},
+{
+  "model": "products.productimage",
+  "pk": 23,
+  "fields": {
+    "product": 4,
+    "image": "product_images/12ee12eb505a3233b2d94e0b550b1cc6cae1ef85_1620042667.webp",
+    "alt_text": "12ee12eb505a3233b2d94e0b550b1cc6cae1ef85_1620042667.webp",
+    "is_featured": false,
+    "created_at": "2025-09-03T17:58:51.488Z"
+  }
+},
+{
+  "model": "products.productimage",
+  "pk": 24,
+  "fields": {
+    "product": 5,
+    "image": "product_images/079f7858eba299c1a00c81eb728059133a8c129d_1598516182.webp",
+    "alt_text": "079f7858eba299c1a00c81eb728059133a8c129d_1598516182.webp",
+    "is_featured": true,
+    "created_at": "2025-09-03T18:23:13.737Z"
+  }
+},
+{
+  "model": "products.productimage",
+  "pk": 25,
+  "fields": {
+    "product": 5,
+    "image": "product_images/e7d8fee7cd32b907781ff771dd4d424d7fb50416_1598516243.webp",
+    "alt_text": "e7d8fee7cd32b907781ff771dd4d424d7fb50416_1598516243.webp",
+    "is_featured": false,
+    "created_at": "2025-09-03T18:23:13.738Z"
+  }
+},
+{
+  "model": "products.productimage",
+  "pk": 26,
+  "fields": {
+    "product": 5,
+    "image": "product_images/d81ed36af4886f95713788511b301201c91212d2_1598516207.webp",
+    "alt_text": "d81ed36af4886f95713788511b301201c91212d2_1598516207.webp",
+    "is_featured": false,
+    "created_at": "2025-09-03T18:23:13.740Z"
+  }
+},
+{
+  "model": "products.productvariant",
+  "pk": 1,
+  "fields": {
+    "product": 1,
+    "attributes": {
+      "رنگ": "مشکی",
+      "price": 2400000,
+      "stock": 5
+    }
+  }
+},
+{
+  "model": "accounts.customuser",
+  "pk": "09111111111",
+  "fields": {
+    "password": "scrypt$16384$XgTbNdwru0dhcB3hW1BE8X$8$5$pjqu4c6nSliRvmEGZ+WBRYy36UIs5oB8JylESWcw3CPuoteTPaaE8tNDWRP/oYxxqDQVCR+nThlrQ59GctfAZQ==",
+    "last_login": "2025-09-03T17:06:26.924Z",
+    "is_superuser": true,
+    "created_at": "2025-09-03T17:05:40.259Z",
+    "updated_at": "2025-09-03T17:05:40.552Z",
+    "is_active": true,
+    "is_admin": true,
+    "role": "customer",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "accounts.customuser",
+  "pk": "09222222222",
+  "fields": {
+    "password": "scrypt$16384$FiGS56UllNKkEsVC3aLUav$8$5$jskjLZxfo5h+JTrdlmRUdItD+gnJLAgHe1AsbDDnE7KyZ8y1hrHFMIABBKuIkieY1KJpPWgQ1Zblm2pp9xjxsg==",
+    "last_login": null,
+    "is_superuser": false,
+    "created_at": "2025-09-03T17:13:47.853Z",
+    "updated_at": "2025-09-03T17:15:08.851Z",
+    "is_active": true,
+    "is_admin": false,
+    "role": "seller",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "accounts.customuser",
+  "pk": "09333333333",
+  "fields": {
+    "password": "scrypt$16384$plR17WbbNBKWtbdW89uULM$8$5$pOVA99kB2fkk/tqbXsj3NeJM4xe4Xwj434NMATiopOzvWboolajD+dLUT7zGncqUDId78lrdQ9sjAwXV9EDS2A==",
+    "last_login": null,
+    "is_superuser": false,
+    "created_at": "2025-09-03T18:40:41.646Z",
+    "updated_at": "2025-09-03T18:40:41.905Z",
+    "is_active": true,
+    "is_admin": false,
+    "role": "customer",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "accounts.profile",
+  "pk": 1,
+  "fields": {
+    "user": "09333333333",
+    "first_name": "علی",
+    "last_name": "",
+    "national_id": "",
+    "birth_date": "2003-11-23",
+    "email": null,
+    "shaba_number": null,
+    "user_job": null,
+    "store_name": null,
+    "store_address": null
+  }
+},
+{
+  "model": "sellers.seller",
+  "pk": 1,
+  "fields": {
+    "user": "09222222222",
+    "is_legal": true,
+    "national_code": "1111111111",
+    "shaba_number": "111111111111111111111111",
+    "store_name": "فروشگاه دیجی کالا",
+    "store_address": "تهران-تهران",
+    "created_at": "2025-09-03T17:15:08.864Z"
+  }
+},
+{
+  "model": "orders.cart",
+  "pk": 1,
+  "fields": {
+    "user": "09333333333",
+    "created_at": "2025-09-03T19:12:04.528Z",
+    "updated_at": "2025-09-03T19:12:04.528Z"
+  }
+},
+{
+  "model": "orders.cartitem",
+  "pk": 1,
+  "fields": {
+    "cart": 1,
+    "product": 4,
+    "quantity": 1,
+    "created_at": "2025-09-03T19:12:04.533Z",
+    "updated_at": "2025-09-03T19:12:04.533Z"
+  }
+}
+]
