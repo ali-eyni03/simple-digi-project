@@ -36,7 +36,7 @@ function App() {
 		<>
 			<AuthProvider>
 				<CartProvider>
-					<Router>
+					<Router basename="/simple-digi-project">
 						<ScrollToTop/>
 						<Routes>
 							{/* Public Routes - All routes are now public in demo mode */}
