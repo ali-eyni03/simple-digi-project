@@ -30,14 +30,13 @@ export const getStaticCategories = () => {
 
 // Helper function to fix image paths
 const getImagePath = (imagePath) => {
-    if (!imagePath) return './placeholder-image.png';
+    const basePath = import.meta.env.BASE_URL || '/';
+    
+    if (!imagePath) return `${basePath}placeholder-image.png`; // Fixed this line
     
     if (imagePath.startsWith('http://') || imagePath.startsWith('https://')) {
         return imagePath;
     }
-    
-    // For GitHub Pages, we need to use the base path from Vite
-    const basePath = import.meta.env.BASE_URL || '/';
     
     if (imagePath.startsWith('product_images/')) {
         return `${basePath}${imagePath}`;
