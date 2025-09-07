@@ -42,7 +42,7 @@ export function ImageCarousel() {
   }, [index, isAnimating]);
 
   return (
-    <div className="relative w-full overflow-hidden h-96 group">
+    <div className="relative w-full  h-40 lg:h-96 group">
       {/* Image wrapper */}
       <div className="relative w-full h-full">
         {/* Previous image (slide out) - only render during animation */}

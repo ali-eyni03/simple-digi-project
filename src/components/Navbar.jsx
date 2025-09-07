@@ -8,11 +8,7 @@ import banner from "../assets/banner-header.jpg";
 import { RiShoppingCartLine } from "react-icons/ri";
 import { MdOutlineNotifications } from "react-icons/md";
 import { MdExitToApp } from "react-icons/md";
-import { IoMenu } from "react-icons/io5";
-import { TbRosetteDiscount } from "react-icons/tb";
 import { FaShoppingBasket, FaStore } from "react-icons/fa";
-import { RiFireLine } from "react-icons/ri";
-import { HiOutlineLocationMarker } from "react-icons/hi";
 import { BsCaretDownFill} from "react-icons/bs";
 import { MdPersonOutline } from "react-icons/md";
 import { LuPencilLine } from "react-icons/lu";
@@ -20,11 +16,17 @@ import { PiHeartStraightBold } from "react-icons/pi";
 import { FaStreetView } from "react-icons/fa";
 import { IoMdExit } from "react-icons/io";
 import { RiHomeSmile2Line } from "react-icons/ri";
+import  miniLogo from "../assets/login-logo.svg"
+import { HiOutlineLocationMarker } from "react-icons/hi";
+import { IoMenu } from "react-icons/io5";
+import { TbRosetteDiscount } from "react-icons/tb";
+import { RiFireLine } from "react-icons/ri";
 
 function Navbar() {
 	const [isSearchFocused, setIsSearchFocused] = useState(false);
 	const { user, isAuthenticated, logoutUser } = useContext(AuthContext); 
-	
+	const [showMobileSearch, setShowMobileSearch] = useState(false);
+
 	let totalItems = 0;
 	try {
 		const { totalItems: cartItems } = useCart();
@@ -90,7 +92,7 @@ function Navbar() {
 	};
 
 	return (
-		<div className="navbar w-full m-auto shadow-[0_4px_3px_-4px_gray]">
+		<div className="w-full  shadow-[0_4px_3px_-4px_gray]">
 			{/* Top Advertisement Banner */}
 			<div className="w-full">
 				<img
@@ -99,70 +101,106 @@ function Navbar() {
 					className="w-full object-cover h-15"
 				/>
 			</div>
-
 			{/* Main Navigation */}
-			<div className="flex w-98/100 m-auto pt-2 pb-2 justify-end">
-				<div className="flex items-center w-85/100 gap-4">
-					<Link to="/">
+			<div className="flex w-[95%] m-auto pt-2 pb-2 justify-between ">
+				<div className="flex items-center w-1/2 mf:w-75/100 gap-2">
+					<Link className="md:hidden" to="/">
+						<img
+							className="object-cover w-20 mt-2"
+							src={miniLogo}
+							alt="Digikala Logo"
+						/>
+					</Link>
+					<Link className="max-md:hidden" to="/">
 						<img
 							className="object-cover w-60 mt-2"
 							src={logo}
 							alt="Digikala Logo"
 						/>
 					</Link>
-					<div
-						className={`flex items-center gap-[5px] w-full search-bar ${
-							isSearchFocused ? "focused" : ""
-						}`}
-					>
-						<div className="relative w-1/2">
-							<input
-								className="
-									rounded-sm
-									p-2
-									pr-10
-									w-full
-									text-sm
-									outline-none
-									bg-gray-100
-									border-b-[2px]
-									border-transparent
-									focus:border-b-blue-300
-									focus:text-gray-500
-									transition-colors
-									duration-200
-									h-10
-								"
-								type="text"
-								placeholder="جستجو"
-								onFocus={() => setIsSearchFocused(true)}
-								onBlur={() => setIsSearchFocused(false)}
-							/>
-							<FiSearch className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400 pointer-events-none" />
-						</div>
+
+
+					<button 
+					className="
+							md:hidden
+							rounded-sm
+							p-2
+							px-5
+							w-full
+							text-sm
+							bg-white
+							border-b-[2px]
+							border-transparent
+							h-10
+							flex
+							items-center
+							justify-between
+							text-gray-600
+							cursor-pointer
+						"
+					onClick={()=>setShowMobileSearch(true)}>
+						<FiSearch className="text-gray-600" size={24}/>
+					</button>
+					{/* Input version for desktop (>= lg) */}
+					<div className="hidden md:block relative w-1/2">
+						<input
+							className="
+								rounded-sm
+								p-2
+								pr-10
+								w-full
+								text-sm
+								outline-none
+								bg-gray-100
+								border-b-[2px]
+								border-transparent
+								focus:border-b-blue-300
+								focus:text-gray-500
+								transition-colors
+								duration-200
+								h-10
+								placeholder:text-gray-300
+							"
+							type="text"
+							placeholder="جستجو"
+							onFocus={() => setIsSearchFocused(true)}
+							onBlur={() => setIsSearchFocused(false)}
+						/>
+						<FiSearch className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400 pointer-events-none" />
 					</div>
+
 				</div>
 
-				<div className="nav-left w-15/100 flex gap-4 justify-center items-center ml-1">
+				<div className="nav-left w-1/2 md:w-25/100 flex gap-4 justify-end items-center ">
 					<Link to="/profile/notifications">
-						<MdOutlineNotifications className="w-6 h-6" />
+						<MdOutlineNotifications className="w-5 h-5 md:w-7 md:h-7" />
 					</Link>
 
 					{isAuthenticated ? ( 
 						<div className="relative" ref={menuRef}>
 							<div
-								className="flex items-center gap-4 cursor-pointer"
-								onClick={() => setIsMenuOpen(!isMenuOpen)}
+								className="items-center gap-4 cursor-pointer hidden md:block"
+								onClick={() => {setIsMenuOpen(!isMenuOpen);
+									
+								}}
 							>
 								<div className="flex items-center justify-center gap-2">
-									<MdPersonOutline className="w-7 h-7" />
-									<BsCaretDownFill className="w-3 h-3" />
+									<MdPersonOutline className="w-5 h-5 md:w-7 md:h-7" />
+									<BsCaretDownFill className="w-2 h-2 md:w-3 md:h-3" />
 								</div>
 							</div>
-
+							<Link to="/profile">
+								<div className="flex items-center justify-center gap-2 md:hidden">
+									<MdPersonOutline className="w-5 h-5 md:w-7 md:h-7" />
+									<BsCaretDownFill className="w-2 h-2 md:w-3 md:h-3" />
+								</div>
+							</Link>
 							{isMenuOpen && (
-								<div className="absolute left-0 mt-2 w-72 bg-white border border-gray-400 rounded-lg shadow-md z-50 p-4">
+								
+								
+								<div className="absolute left-0 mt-2 w-72 bg-white border border-gray-400 rounded-lg shadow-md z-50 p-4 hidden md:block">
 									{/* User Info Section */}
+									
 									<div className="px-4 py-3 border-b">
 										<p className="text-sm text-gray-600">
 											کاربر عزیز (حالت دمو)
@@ -208,7 +246,7 @@ function Navbar() {
 											>
 												<div className="item flex items-center gap-3 px-4 py-3 text-sm hover:bg-blue-50 transition-colors cursor-pointer">
 													<div className="icon text-lg text-blue-600">
-														<FaStore />
+														<FaStore className="w-5 h-5"/>
 													</div>
 													<p className="text-blue-600 font-semibold">
 														داشبورد فروشندگی
@@ -227,7 +265,7 @@ function Navbar() {
 											>
 												<div className="item flex items-center gap-3 px-4 py-3 text-sm hover:bg-green-50 transition-colors cursor-pointer">
 													<div className="icon text-lg text-green-600">
-														<FaStore />
+														<FaStore className="w-5 h-5"/>
 													</div>
 													<p className="text-green-600 font-semibold">
 														ثبت نام فروشندگی
@@ -254,6 +292,7 @@ function Navbar() {
 										</button>
 									</div>
 								</div>
+								
 							)}
 						</div>
 					) : (
@@ -283,9 +322,9 @@ function Navbar() {
 
 					{/* Shopping Cart with counter */}
 					<Link to="/cart" className="relative">
-						<RiShoppingCartLine className="w-5 h-5" />
+						<RiShoppingCartLine className="w-4 h-4 md:w-5 md:h-5" />
 						{totalItems > 0 && (
-							<span className="absolute -top-2 -right-2 bg-red-500 text-white text-xs rounded-full h-4 w-4 flex items-center justify-center font-medium text-[10px]">
+							<span className="absolute -top-2 -right-2 bg-red-500 opacity-70 text-white text-xs rounded-full h-4 w-4 flex items-center justify-center font-medium text-[10px]">
 								{totalItems > 99 ? '99+' : totalItems}
 							</span>
 						)}
@@ -294,34 +333,34 @@ function Navbar() {
 			</div>
 
 			{/* Categories Menu */}
-			<div className="flex w-98/100 m-auto mb-2.5 justify-end-safe items-end py-2">
+			<div className="flex w-full px-4 mb-2.5 justify-between items-end py-2 overflow-hidden">
 				<div className="flex w-full">
 					<ul className="flex text-sm text-gray-600 mt-2 gap-3 components">
 						<li className="font-semibold text-black pl-6 border-l-1 border-l-gray-500">
 							<a href="#">
-								<p>دسته‌بندی کالاها</p>
+								<p className="">دسته‌بندی کالاها</p>
 								<IoMenu />
 							</a>
 						</li>
-						<li className="pl-6">
+						<li className=" pl-6  hidden lg:block">
 							<a href="#">
 								<p>شگفت‌انگیزها</p>
 								<TbRosetteDiscount />
 							</a>
 						</li>
-						<li className="pl-6">
+						<li className="pl-6  hidden lg:block">
 							<a href="#">
 								<p>سوپرمارکت</p>
 								<FaShoppingBasket />
 							</a>
 						</li>
-						<li className="pl-6 border-l-1 border-l-gray-500">
+						<li className="pl-6 border-l-1 border-l-gray-500  hidden lg:block">
 							<a href="#">
 								<p>پرفروش‌ترین‌ها</p>
 								<RiFireLine />
 							</a>
 						</li>
-						<li className="pl-6">
+						<li className="pl-6 hidden lg:block">
 							<a href="#">
 								<p>سوالی دارید؟</p>
 							</a>
@@ -338,11 +377,12 @@ function Navbar() {
 				</div>
 
 				{/* Location */}
-				<div className="text-[10px] flex flex-row-reverse gap-1 items-center justify-center bg-orange-50 rounded-3xl text-orange-600 p-2 font-medium w-15/100">
-					<p>شهر خود را انتخاب کنید</p>
-					<HiOutlineLocationMarker className="h-[16px] w-[16px]" />
+				<div className="text-[10px] flex flex-row-reverse gap-1 items-center justify-center bg-orange-50 rounded-3xl text-orange-600 p-2 font-medium w-15/100 max-w-max">
+					<p className="hidden xl:inline-block">شهر خود را انتخاب کنید</p>
+					<HiOutlineLocationMarker className="w-5 h-5 md:w-8 md_h-8" />
 				</div>
 			</div>
+			
 		</div>
 	);
 }

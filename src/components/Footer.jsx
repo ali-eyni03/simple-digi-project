@@ -241,7 +241,7 @@ const fullText = `دیجی کالا؛ بزرگترین فروشگاه اینتر
       </div>
 
       {/* Main footer content */}
-      <div className="py-12 bg-white">
+      <div className="py-12 bg-white overflow-hidden">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
             {/* Footer links */}
@@ -269,7 +269,7 @@ const fullText = `دیجی کالا؛ بزرگترین فروشگاه اینتر
                         <p className="text-gray-700 mb-3 text-lg leading-relaxed">
                           با ثبت ایمیل، از جدیدترین تخفیف‌ها باخبر شوید
                         </p>
-                        <div className="flex gap-2 bg-gra">
+                        <div className="flex flex-col gap-2">
                           <input 
                             type="email" 
                             placeholder="ایمیل شما" 
