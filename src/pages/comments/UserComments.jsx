@@ -95,9 +95,9 @@ const ProfileComments = () => {
   ];
 
   return (
-    <div className="max-w-6xl mx-auto p-4 space-y-4">
+    <div className="max-w-6xl mx-auto p-2 space-y-4">
       {/* Header */}
-      <div className=" p-6">
+      <div className=" p-1">
         <h1 className="text-2xl font-bold text-gray-800">دیدگاه‌های من</h1>
         <p className="text-gray-600 text-sm mt-1">مدیریت و مشاهده دیدگاه‌های ثبت شده</p>
       </div>
@@ -110,7 +110,7 @@ const ProfileComments = () => {
               <button
                 key={tab.id}
                 onClick={() => setActiveTab(tab.id)}
-                className={`px-6 py-3 font-medium text-sm border-b-2 transition-colors ${
+                className={` px-6 py-3 font-medium text-[10px] md:text-sm border-b-2 transition-colors ${
                   activeTab === tab.id
                     ? 'border-blue-500 text-blue-600'
                     : 'border-transparent text-gray-500 hover:text-gray-700'
@@ -118,7 +118,7 @@ const ProfileComments = () => {
               >
                 {tab.label}
                 {tab.count > 0 && (
-                  <span className="mr-2 bg-gray-100 text-gray-600 text-xs px-2 py-0.5 rounded-full">
+                  <span className="mr-2 bg-gray-100 text-gray-600 text-[9px] md:text-xs px-2 py-0.5 rounded-full">
                     {tab.count}
                   </span>
                 )}
@@ -158,19 +158,19 @@ const ProfileComments = () => {
                     <div className="flex-1">
                       <div className="flex items-start justify-between mb-2">
                         <div>
-                          <h3 className="font-medium text-gray-800 text-sm">
+                          <h3 className="font-medium text-gray-800 text-xs md:text:sm">
                             {comment.product.name}
                           </h3>
-                          <div className="flex items-center gap-2 mt-1">
+                          <div className="flex flex-col md_flex-row items-center gap-2 mt-1">
                             <div className="flex">{renderStars(comment.rating)}</div>
                             <span className="text-xs text-gray-500">{comment.created_at}</span>
                           </div>
                         </div>
-                        {getStatusBadge(comment.status)}
+                       <div className="hidden md:block"> {getStatusBadge(comment.status)}</div>
                       </div>
 
-                      <h4 className="font-semibold text-gray-800 mb-1">{comment.title}</h4>
-                      <p className="text-gray-600 text-sm mb-3">{comment.text}</p>
+                      <h4 className="text-[12px] sm:text-base font-semibold text-gray-800 mb-1">{comment.title}</h4>
+                      <p className="text-gray-600 text-[11px] sm:text-sm mb-3">{comment.text}</p>
 
                       {comment.rejection_reason && (
                         <div className="bg-red-50 text-red-700 text-xs p-2 rounded mb-2">
@@ -180,7 +180,7 @@ const ProfileComments = () => {
 
                       {comment.status === 'published' && (
                         <div className="flex items-center gap-4 text-sm text-gray-500">
-                          <span>آیا این دیدگاه مفید بود؟</span>
+                          <span className="text-xs md:text-base">آیا این دیدگاه مفید بود؟</span>
                           <div className="flex items-center gap-2">
                             <span className="flex items-center gap-1">
                               <FaRegStar className="text-green-500" />

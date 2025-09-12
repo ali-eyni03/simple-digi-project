@@ -12,6 +12,7 @@ import { IoMdExit } from "react-icons/io";
 import { BsPersonCircle } from "react-icons/bs";
 import { FaStore } from "react-icons/fa";
 import "./profileMenu.css";
+import { IoMenu } from "react-icons/io5";
 
 const menu = [
 	{
@@ -63,7 +64,7 @@ const ProfileMenu = () => {
 	const navigate = useNavigate();
 	const [userInfo, setUserInfo] = useState(null);
 	const [isSeller, setIsSeller] = useState(false);
-
+	const [isMenuOpen, setIsMenuOpen] = useState(false);
 	const fetchUserInfo = async () => {
 		if (isDemoMode) {
 			// Use static data in demo mode
@@ -96,9 +97,8 @@ const ProfileMenu = () => {
 				setIsSeller(userRole === 'seller' || userRole === 'admin');
 			}
 		} else {
-			// Fallback - try to fetch from API (won't work in demo but prevents errors)
+			
 			try {
-				// This would be the original API call logic
 				setUserInfo({
 					phone_number: user?.phone_number,
 					full_name: user?.full_name || 'کاربر'
@@ -149,10 +149,19 @@ const ProfileMenu = () => {
 	}, [user, userRole, isDemoMode]);
 
 	return (
-		<div className="menu border-1 border-gray-200 rounded-md m-3 md:m-6 p-4">
+	<div className="md:menu md:border-1 md:border-gray-200 md:rounded-md md:m-6 p-2">
+		{/* Sticky button that sticks to top when scrolling down */}
+		<button 
+			className="sticky top-0 z-10 rounded-lg border border-gray-300 text-gray-400 p-2 md:hidden  bg-white shadow-sm" 
+			onClick={() => setIsMenuOpen(!isMenuOpen)}
+		>
+			<IoMenu size={20}/>
+		</button>
+
+		<div className="hidden md:block">
 			{/* Demo Mode Indicator */}
 			{isDemoMode && (
-				<div className="mb-4 p-2 rounded text-center">
+				<div className="hidden md:block md:mb-4 md:p-2 md:rounded md:text-center">
 					<span className={`px-3 py-1 rounded-full text-xs font-medium ${
 						userRole === 'seller' ? 'bg-green-100 text-green-800' : 
 						userRole === 'admin' ? 'bg-purple-100 text-purple-800' : 
@@ -164,7 +173,7 @@ const ProfileMenu = () => {
 			)}
 
 			{/* User Info Section */}
-			<div className="flex justify-between w-full my-2.5 items-center mb-10">
+			<div className="hidden md:flex md:justify-between md:w-full md:my-2.5 md:items-center md:mb-10">
 				<div className="flex flex-col">
 					<p className="font-medium text-sm md:text-base">
 						{userInfo?.full_name || 'کاربر عزیز'}
@@ -246,7 +255,66 @@ const ProfileMenu = () => {
 				</div>
 			)}
 		</div>
-	);
+
+		{/* Mobile Menu - Show when isMenuOpen is true */}
+		{isMenuOpen && (
+			<div className="md:hidden  space-y-1 w-[80%] border border-gray-200 shadow-lg z-10 rounded-lg absolute bg-white">
+				{menu.map((item) => (
+					<Link to={item.url} key={item.id} onClick={() => setIsMenuOpen(false)}>
+						<div className="item flex items-center gap-4 h-12 text-sm font-medium border-t border-gray-200 hover:bg-gray-50 transition-colors px-2">
+							<p className="icon text-lg">{item.icon}</p>
+							<p className="title flex-1 text-gray-600">{item.title}</p>
+						</div>
+					</Link>
+				))}
+
+				{/* Mobile Seller Section */}
+				{isSeller && (
+					<Link to="/seller-profile" onClick={() => setIsMenuOpen(false)}>
+						<div className="item flex items-center gap-4 h-12 text-sm font-medium border-t border-gray-200 hover:bg-blue-50 transition-colors px-2">
+							<p className="icon text-lg text-blue-600">
+								<FaStore />
+							</p>
+							<p className="title flex-1 text-blue-600 font-semibold">
+								پنل فروشندگی
+							</p>
+						</div>
+					</Link>
+				)}
+
+				{/* Mobile Become Seller */}
+				{!isSeller && isDemoMode && (
+					<Link to="/seller-register" onClick={() => setIsMenuOpen(false)}>
+						<div className="item flex items-center gap-4 h-12 text-sm font-medium border-t border-gray-200 hover:bg-green-50 transition-colors px-2">
+							<p className="icon text-lg text-green-600">
+								<FaStore />
+							</p>
+							<p className="title flex-1 text-green-600">
+								ثبت نام فروشندگی
+							</p>
+						</div>
+					</Link>
+				)}
+
+				{/* Mobile Logout */}
+				<div 
+					onClick={() => {
+						setIsMenuOpen(false);
+						handleLogout();
+					}}
+					className="item flex items-center gap-4 h-12 text-sm font-medium border-t border-gray-200 hover:bg-red-50 transition-colors cursor-pointer px-2"
+				>
+					<p className="icon text-lg text-red-600">
+						<IoMdExit />
+					</p>
+					<p className="title flex-1 text-red-600">
+						{isDemoMode ? 'بازگشت به صفحه اصلی' : 'خروج از حساب کاربری'}
+					</p>
+				</div>
+			</div>
+		)}
+	</div>
+);
 };
 
 export default ProfileMenu;

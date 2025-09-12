@@ -88,9 +88,9 @@ const ProfileLists = () => {
   );
 
   return (
-    <div className="max-w-6xl mx-auto p-4 space-y-4">
+    <div className="max-w-6xl mx-auto p-2 space-y-4">
       {/* Header */}
-      <div className=" p-6">
+      <div className=" p-2">
         <h1 className="text-2xl font-bold text-gray-800">لیست‌های من</h1>
         <p className="text-gray-600 text-sm mt-1">مدیریت محصولات مورد علاقه و لیست خرید</p>
       </div>
@@ -104,15 +104,15 @@ const ProfileLists = () => {
                 <button
                   key={list.id}
                   onClick={() => setActiveList(list.id)}
-                  className={`w-full flex items-center gap-3 p-3 rounded-lg transition-colors ${
+                  className={`w-full flex flex-col md:flex-row items-center gap-3 p-3 rounded-lg transition-colors ${
                     activeList === list.id
                       ? 'bg-gray-100 text-blue-600 border-r-2 border-blue-500'
                       : 'text-gray-700 hover:bg-gray-50'
                   } cursor-pointer`}
                 >
                   {list.icon}
-                  <span className="font-medium">{list.label}</span>
-                  <span className="mr-auto bg-gray-100 text-gray-600 text-xs px-2 py-0.5 rounded-full">
+                  <span className="text-[11px] md:text-sm md:block md:font-medium">{list.label}</span>
+                  <span className="hidden md:block mr-auto bg-gray-100 text-gray-600 text-xs px-2 py-0.5 rounded-full">
                     {products.length}
                   </span>
                 </button>
@@ -146,7 +146,7 @@ const ProfileLists = () => {
                   <p>محصولی در این لیست وجود ندارد</p>
                 </div>
               ) : (
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                <div className="grid grid-cols-2 lg:grid-cols-3 gap-4">
                   {filteredProducts.map(product => (
                     <div key={product.id} className="border border-gray-200 rounded-lg p-4 relative group">
                       {/* Remove Button */}

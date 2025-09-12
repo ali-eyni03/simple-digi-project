@@ -1,6 +1,7 @@
 import { useState, useEffect, useContext } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../auth/AuthContext";
+import { getStaticUserProfiles } from "../../data/staticData";
 import axios from "axios";
 import { FaAngleLeft, FaUser, FaShoppingCart, FaHeart, FaBox } from "react-icons/fa";
 import { MdVerified, MdWarning } from "react-icons/md";
@@ -46,7 +47,7 @@ const ProductCard = ({ product, type = "wishlist" }) => {
 				<div className="mt-auto">
 					{product.price && (
 						<div className="mb-3">
-							<p className="text-lg font-bold text-gray-900">
+							<p className="text-sm md:text-lg font-bold text-gray-900">
 								{formatPrice(product.price)}
 								<span className="text-xs font-normal mr-1">تومان</span>
 							</p>
@@ -89,8 +90,9 @@ const StatsCard = ({ icon, count, label, color }) => (
 );
 
 const UserProfileHomePage = () => {
-	const { authTokens, user } = useContext(AuthContext);
+	const { authTokens, user, userRole, isDemoMode } = useContext(AuthContext);
 	const [userProfile, setUserProfile] = useState(null);
+	const [userInfo, setUserInfo] = useState(null);
 	const [wishlistProducts, setWishlistProducts] = useState([]);
 	const [recentlyViewed, setRecentlyViewed] = useState([]);
 	const [orderStats, setOrderStats] = useState({
@@ -101,29 +103,95 @@ const UserProfileHomePage = () => {
 	const [loading, setLoading] = useState(true);
 	const [isVerified, setIsVerified] = useState(false);
 
-	useEffect(() => {
-		fetchUserData();
-	}, [authTokens]);
+	const fetchUserInfo = async () => {
+		if (isDemoMode) {
+			// Use static data in demo mode
+			try {
+				const staticProfiles = getStaticUserProfiles();
+				const userProfile = staticProfiles.find(p => p.user === user?.phone_number) || staticProfiles[0];
+				
+				setUserInfo({
+					phone_number: user?.phone_number || '09123456789',
+					full_name: userProfile?.full_name || user?.full_name || 'کاربر دمو',
+					first_name: userProfile?.first_name || 'کاربر',
+					last_name: userProfile?.last_name || 'دمو',
+					email: userProfile?.email || 'demo@example.com',
+					role: userRole || 'user'
+				});
+
+				// Also set userProfile for verification check
+				setUserProfile({
+					first_name: userProfile?.first_name || 'کاربر',
+					last_name: userProfile?.last_name || 'دمو',
+					national_id: userProfile?.national_id || '1234567890',
+					email: userProfile?.email || 'demo@example.com'
+				});
+
+			} catch (error) {
+				console.error("Error loading static user info:", error);
+				// Fallback mock data
+				setUserInfo({
+					phone_number: user?.phone_number || '09123456789',
+					full_name: user?.full_name || 'کاربر دمو',
+					first_name: 'کاربر',
+					last_name: 'دمو',
+					email: 'demo@example.com',
+					role: userRole || 'user'
+				});
+
+				setUserProfile({
+					first_name: 'کاربر',
+					last_name: 'دمو',
+					national_id: '1234567890',
+					email: 'demo@example.com'
+				});
+			}
+		} else {
+			// Original API call logic
+			try {
+				const response = await axios.get(
+					"http://127.0.0.1:8000/api/accounts/profile/",
+					{
+						headers: {
+							Authorization: `Bearer ${authTokens?.access}`,
+						},
+					}
+				);
+				
+				setUserInfo({
+					...response.data,
+					full_name: response.data.first_name && response.data.last_name 
+						? `${response.data.first_name} ${response.data.last_name}`
+						: response.data.full_name || 'کاربر'
+				});
+				setUserProfile(response.data);
+
+			} catch (error) {
+				console.error("Error fetching user info:", error);
+				setUserInfo({
+					phone_number: user?.phone_number,
+					full_name: user?.full_name || 'کاربر'
+				});
+			}
+		}
+	};
 
 	const fetchUserData = async () => {
-		if (!authTokens) return;
+		if (!authTokens && !isDemoMode) return;
 
 		try {
 			setLoading(true);
 			
-			const profileResponse = await axios.get(
-				"http://127.0.0.1:8000/api/accounts/profile/",
-				{
-					headers: {
-						Authorization: `Bearer ${authTokens?.access}`,
-					},
-				}
-			);
-			setUserProfile(profileResponse.data);
+			// Fetch user info first
+			await fetchUserInfo();
 			
-			const { first_name, last_name, national_id, email } = profileResponse.data;
-			setIsVerified(!!(first_name && last_name && national_id && email));
+			// Check verification status
+			if (userProfile) {
+				const { first_name, last_name, national_id, email } = userProfile;
+				setIsVerified(!!(first_name && last_name && national_id && email));
+			}
 			
+			// Mock data for products and orders
 			setWishlistProducts([
 				{
 					id: 1,
@@ -149,6 +217,7 @@ const UserProfileHomePage = () => {
 					image: null
 				},
 			]);
+			
 			setOrderStats({
 				processing: 2,
 				delivered: 5,
@@ -162,6 +231,10 @@ const UserProfileHomePage = () => {
 		}
 	};
 
+	useEffect(() => {
+		fetchUserData();
+	}, [authTokens, user, userRole, isDemoMode]);
+
 	if (loading) {
 		return (
 			<div className="flex items-center justify-center min-h-screen">
@@ -171,38 +244,63 @@ const UserProfileHomePage = () => {
 	}
 
 	return (
-		<div className="max-w-6xl mx-auto p-4 space-y-4 m-2">
-			{/* Welcome Section */}
-			<div className="bg-gradient-to-r from-blue-500 to-purple-600 rounded-xl p-6 text-white shadow-lg">
-				<div className="flex items-center justify-between">
-					<div>
-						<h1 className="text-2xl font-bold mb-2">
-							سلام {userProfile?.first_name || 'کاربر عزیز'}
-						</h1>
-						<p className="opacity-90">
-							به حساب کاربری خود خوش آمدید
+		<div className="max-w-6xl mx-auto p-2 space-y-4">
+			{/* Demo Mode Indicator */}
+			{isDemoMode && (
+				<div className="bg-blue-50 border border-blue-200 rounded-lg p-3 mb-4">
+					<div className="text-center">
+						<span className={`px-3 py-1 rounded-full text-xs font-medium ${
+							userRole === 'seller' ? 'bg-green-100 text-green-800' : 
+							userRole === 'admin' ? 'bg-purple-100 text-purple-800' : 
+							'bg-blue-100 text-blue-800'
+						}`}>
+							حالت دمو: {userRole === 'seller' ? 'فروشنده' : userRole === 'admin' ? 'ادمین' : 'کاربر عادی'}
+						</span>
+						<p className="text-blue-600 text-xs mt-2">
+							حالت دمو - تمام امکانات قابل دسترسی
 						</p>
 					</div>
-					<FaUser className="text-4xl opacity-50" />
+				</div>
+			)}
+
+			{/* Welcome Section */}
+			<div className="bg-gradient-to-r from-blue-500 to-purple-600 rounded-xl p-3 text-white shadow-lg">
+				<div className="flex items-center justify-between">
+					<div>
+						<h1 className="text-lg md:text-2xl font-bold mb-2">
+							سلام {userInfo?.full_name || 'کاربر عزیز'}
+						</h1>
+						<p className="opacity-90 text-[12px] md:text-base">
+							به حساب کاربری خود خوش آمدید
+						</p>
+						<div className="md:hidden flex text-[12px]">
+							{isDemoMode && (
+							<p className=" opacity-75 mt-1">
+								این یک نسخه دمو است - تمام عملیات شبیه‌سازی می‌شود
+							</p>
+						)}
+						</div>
+					</div>
+					<FaUser className="text-2xl md:text-4xl opacity-50" />
 				</div>
 			</div>
 
 			{/* Identity Verification Alert */}
 			{!isVerified && (
-				<div className="bg-amber-50 border border-amber-200 rounded-lg p-4">
-					<div className="flex items-center justify-between">
-						<div className="flex items-center gap-3">
-							<MdWarning className="text-amber-600 text-xl" />
+				<div className="bg-amber-50 border border-amber-200 rounded-lg p-2">
+					<div className="flex gap-2 items-center justify-between">
+						<div className="flex items-center gap-2">
+							<MdWarning className="text-amber-600 hidden md:block text-xl" />
 							<div className="text-sm">
-								<p className="font-medium text-amber-900">تکمیل اطلاعات حساب کاربری</p>
-								<p className="text-amber-700 mt-1">
+								<p className="font-medium text-amber-900 text-[12px] md:text-base">تکمیل اطلاعات حساب کاربری</p>
+								<p className="text-amber-700 mt-1 text-[12px] md:text-base">
 									با تایید هویت می‌توانید امنیت حساب کاربری‌تان را افزایش دهید و از امکان «خرید اعتباری» نیز استفاده کنید
 								</p>
 							</div>
 						</div>
 						<Link
 							to="/profile/personal-info"
-							className="flex items-center gap-1 text-blue-600 hover:text-blue-700 font-medium text-sm whitespace-nowrap"
+							className="flex items-center gap-1 text-blue-600 hover:text-blue-700 font-medium text-[12px] md:text-sm whitespace-nowrap"
 						>
 							تایید هویت
 							<FaAngleLeft />
@@ -228,32 +326,32 @@ const UserProfileHomePage = () => {
 					</Link>
 				</div>
 				
-				<div className="p-6">
+				<div className="p-2">
 					{orderStats.processing > 0 || orderStats.delivered > 0 ? (
 						<div className="grid grid-cols-3 gap-4">
 							<Link to="/profile/orders?status=processing" className="text-center p-4 rounded-lg hover:bg-gray-100 transition-colors flex items-center justify-center gap-2">
 								<div>
-									<img src={statusProcessing} className="w-16" alt="" />
+									<img src={statusProcessing} className="w-10 md:w-16" alt="" />
 								</div>
-								<div className="flex flex-col items-start p-1">
+								<div className="hidden md:flex md:flex-col md:items-start md:p-1">
 									<div className="text-xl font-bold text-blue-500">{orderStats.processing}</div>
 								<p className="text-sm text-gray-600 mt-1">در حال پردازش</p>
 								</div>
 							</Link>
 							<Link to="/profile/orders?status=delivered" className="text-center p-4 rounded-lg hover:bg-gray-100 transition-colors  flex items-center justify-center gap-2">
-								<div>
-									<img src={statusDelivered} className="w-16" alt="" />
+								<div >
+									<img src={statusDelivered} className="w-10 md:w-16" alt="" />
 								</div>
-								<div className="flex flex-col items-start p-1">
+								<div className="hidden md:flex md:flex-col md:items-start md:p-1">
 									<div className="text-xl font-bold text-green-500">{orderStats.delivered}</div>
 									<p className="text-sm text-gray-600 mt-1">تحویل شده</p>
 								</div>
 							</Link>
 							<Link to="/profile/orders?status=returned" className="text-center p-4 rounded-lg hover:bg-gray-100 transition-colors flex items-center justify-center gap-2">
 								<div>
-									<img src={statusReturned} className="w-16" alt="" />
+									<img src={statusReturned} className="w-10 md:w-16" alt="" />
 								</div>
-								<div className="flex flex-col items-start p-1">
+								<div className="hidden md:flex md:flex-col md:items-start md:p-1">
 									<div className="text-xl font-bold text-yellow-500">{orderStats.returned}</div>
 									<p className="text-sm text-gray-600 mt-1">مرجوع شده</p>
 								</div>
@@ -275,7 +373,7 @@ const UserProfileHomePage = () => {
 			{wishlistProducts.length > 0 && (
 				<div className="bg-white rounded-lg shadow-sm border border-gray-100">
 					<div className="flex items-center justify-between p-4 border-b border-gray-200">
-						<h2 className="text-lg font-bold flex items-center gap-2">
+						<h2 className="text-[14px] sm:text-lg font-bold flex items-center gap-2">
 							<FaHeart className="text-red-500" />
 							از لیست‌های شما
 						</h2>
@@ -288,14 +386,14 @@ const UserProfileHomePage = () => {
 						</Link>
 					</div>
 					
-					<div className="p-4">
+					<div className="p-2">
 						<Swiper
 							modules={[Pagination, Navigation]}
 							spaceBetween={16}
 							navigation
 							pagination={{ clickable: true }}
 							breakpoints={{
-								320: { slidesPerView: 1 },
+								320: { slidesPerView: 2 },
 								640: { slidesPerView: 2 },
 								768: { slidesPerView: 3 },
 								1024: { slidesPerView: 4 },
@@ -331,7 +429,7 @@ const UserProfileHomePage = () => {
 							spaceBetween={16}
 							navigation
 							breakpoints={{
-								320: { slidesPerView: 1 },
+								320: { slidesPerView: 2 },
 								640: { slidesPerView: 2 },
 								768: { slidesPerView: 3 },
 								1024: { slidesPerView: 4 },

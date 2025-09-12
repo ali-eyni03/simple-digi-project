@@ -268,20 +268,20 @@ const UserComments = () => {
   };
 
   return (
-    <div className="max-w-6xl mx-auto p-4 space-y-4">
+    <div className="max-w-6xl mx-auto p-2 space-y-4">
       {/* Header */}
-      <div className="bg-white rounded-lg shadow-sm p-6">
+      <div className="bg-white rounded-lg shadow-sm p-2">
         <div className="flex justify-between items-center">
           <div>
-            <h1 className="text-2xl font-bold text-gray-800">آدرس‌های من</h1>
-            <p className="text-gray-600 text-sm mt-1">مدیریت آدرس‌های ارسال سفارشات</p>
+            <h1 className="text-lg md:text-2xl font-bold text-gray-800">آدرس‌های من</h1>
+            <p className="text-gray-600 text-[12px] md:text-sm mt-1">مدیریت آدرس‌های ارسال سفارشات</p>
           </div>
           <button
             onClick={() => setShowAddModal(true)}
-            className="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600 flex items-center gap-2"
+            className="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600 flex items-center gap-2 "
           >
             <IoMdAdd size={20} />
-            افزودن آدرس جدید
+            <span className="hidden md:block">افزودن آدرس جدید</span>
           </button>
         </div>
       </div>
@@ -338,7 +338,7 @@ const UserComments = () => {
                   {!address.is_default && (
                     <button
                       onClick={() => handleSetDefault(address.id)}
-                      className="text-gray-500 hover:bg-gray-50 px-3 py-1 rounded text-sm"
+                      className="text-gray-500 hover:bg-gray-50 px-3 py-1 rounded text-[12px] md:text-sm"
                     >
                       انتخاب به عنوان پیش‌فرض
                     </button>
