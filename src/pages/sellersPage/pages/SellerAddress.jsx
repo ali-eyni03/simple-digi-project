@@ -6,19 +6,20 @@ import { CiMenuKebab } from "react-icons/ci";
 
 const AddressAddSection = () => {
 	return (
-		<div className="w-full border rounded-lg border-gray-200 shadow-lg p-4 m-4 bg-white">
-			<div className="flex justify-between px-5">
+		<div  className="min-h-screen text-[12px] lg:text-base">
+			<div className="w-full border rounded-lg border-gray-200 shadow-lg p-4  bg-white">
+			<div className="flex justify-between w-full px-5">
 				<div className="border-b-2 border-red-500 flex items-center justify-center p-2">
-					<p className="font-semibold text-lg">
+					<p className="font-semibold ">
 						آدرس ها
 					</p>
 				</div>
-				<div className="flex items-center justify-center gap-2 text-red-700 font-medium px-4">
+				<div className="flex items-center justify-center gap-2 text-red-700 font-medium ">
 					<p>افزودن آدرس جدید</p>
 					<IoMdAdd />
 				</div>
 			</div>
-			<div className="border-2 rounded-lg border-blue-400 mx-2 m-auto my-3 grid grid-cols-12 gap-1 text-base text-gray-600 py-4">
+			<div className="border-2 rounded-lg border-blue-400 mx-2 m-auto my-3 grid grid-cols-12 gap-1 text-gray-600 py-4">
 				<div className="flex items-baseline justify-center">
 					<GrLocation className="w-6 h-6 text-blue-400"/>
 				</div>
@@ -33,6 +34,7 @@ const AddressAddSection = () => {
 					<CiMenuKebab  className="w-6 h-6"/>
 				</div>
 			</div>
+		</div>
 		</div>
 	);
 };

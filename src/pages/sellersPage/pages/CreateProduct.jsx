@@ -68,7 +68,7 @@ const CreateProduct = () => {
 	const [subcategories, setSubcategories] = useState([]);
 	const [subcategoriesLoading, setSubcategoriesLoading] = useState(false);
 
-	const inputClasses = "bg-gray-50 w-full rounded-lg h-10 outline-none border-2 border-transparent focus:border-blue-400 focus:text-gray-700 transition-colors duration-200 px-3";
+	const inputClasses = "bg-gray-50 w-full rounded-lg h-10 outline-none border-2 border-transparent focus:border-blue-400 focus:text-gray-700 transition-colors duration-200 px-3 ";
 	const textareaClasses = "bg-gray-50 w-full rounded-lg outline-none border-2 border-transparent focus:border-blue-400 focus:text-gray-700 transition-colors duration-200 px-3 py-2 resize-none";
 
 	useEffect(() => {
@@ -261,14 +261,14 @@ const CreateProduct = () => {
 
 	// Demo Banner Component
 	const DemoBanner = () => (
-		<div className="bg-green-100 border-l-4 border-green-500 text-green-700 p-4 mb-6 rounded">
+		<div className="bg-green-100 border-l-4 border-green-500 text-green-700 p-4 mb-6 rounded ">
 			<div className="flex">
 				<div className="flex-shrink-0">
 					<FaCheckCircle className="h-5 w-5 text-green-500" />
 				</div>
 				<div className="mr-3">
-					<h3 className="text-sm font-medium">حالت دمو - ایجاد محصول</h3>
-					<div className="mt-2 text-sm">
+					<h3 className="text-[12px] md:text-sm font-medium">حالت دمو - ایجاد محصول</h3>
+					<div className="mt-2 text-[12px] md:text-sm">
 						<p>تمام عملیات ایجاد محصول در این حالت شبیه‌سازی می‌شود.</p>
 					</div>
 				</div>
@@ -282,11 +282,11 @@ const CreateProduct = () => {
 			
 			{/* Header */}
 			<div className="flex items-center justify-between mb-6">
-				<h1 className="text-xl md:text-2xl font-bold text-gray-800">ایجاد محصول جدید</h1>
-				<div className="flex space-x-2 space-x-reverse">
+				<h1 className="text-[12px] md:text-2xl font-bold text-gray-800">ایجاد محصول جدید</h1>
+				<div className="flex gap-1 space-x-2 space-x-reverse">
 					<button
 						onClick={() => setCurrentWorkflow("search")}
-						className={`px-4 py-2 text-sm rounded-lg transition-colors ${
+						className={`px-2 py-2 text-[10px] md:text-sm rounded-lg transition-colors ${
 							currentWorkflow === "search" 
 								? "bg-blue-600 text-white" 
 								: "bg-gray-200 text-gray-700 hover:bg-gray-300"
@@ -296,7 +296,7 @@ const CreateProduct = () => {
 					</button>
 					<button
 						onClick={() => setCurrentWorkflow("create")}
-						className={`px-4 py-2 text-sm rounded-lg transition-colors ${
+						className={`px-2 py-2 text-[10px] md:text-sm rounded-lg transition-colors ${
 							currentWorkflow === "create" 
 								? "bg-green-600 text-white" 
 								: "bg-gray-200 text-gray-700 hover:bg-gray-300"
@@ -311,7 +311,7 @@ const CreateProduct = () => {
 			{currentWorkflow === "search" && (
 				<div className="space-y-6">
 					<div className="bg-blue-50 p-4 rounded-lg">
-						<h2 className="text-lg font-semibold mb-4 text-blue-800">جستجو در محصولات موجود</h2>
+						<h2 className="text-[13px] md:text-lg font-semibold mb-4 text-blue-800">جستجو در محصولات موجود</h2>
 						<div className="flex gap-4">
 							<div className="flex-1">
 								<input
@@ -326,7 +326,7 @@ const CreateProduct = () => {
 							<button
 								onClick={handleSearch}
 								disabled={searchLoading}
-								className="px-6 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 disabled:bg-blue-300 transition-colors flex items-center gap-2"
+								className="px-6 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 disabled:bg-blue-300 transition-colors flex items-center gap-2 text-[12px] "
 							>
 								{searchLoading ? (
 									<div className="animate-spin w-4 h-4 border-2 border-white border-t-transparent rounded-full"></div>
@@ -341,7 +341,7 @@ const CreateProduct = () => {
 					{/* Search Results */}
 					{searchResults.length > 0 && (
 						<div className="space-y-4">
-							<h3 className="text-lg font-semibold">نتایج جستجو ({searchResults.length} محصول)</h3>
+							<h3 className="text-[12px] md:text-lg font-semibold">نتایج جستجو ({searchResults.length} محصول)</h3>
 							<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
 								{searchResults.map((product) => (
 									<div key={product.id} className="border rounded-lg p-4 hover:shadow-md transition-shadow">

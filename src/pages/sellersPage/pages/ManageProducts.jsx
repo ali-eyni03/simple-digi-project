@@ -165,10 +165,10 @@ const ManageProducts = () => {
             {/* Header */}
             <div className="mb-6">
                 <div className="flex items-center justify-between mb-4">
-                    <h1 className="text-2xl font-bold text-gray-800">مدیریت محصولات</h1>
+                    <h1 className="text-lg md:text-xl font-bold text-gray-800">مدیریت محصولات</h1>
                     <Link
                         to="/seller-profile/products/create"
-                        className="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-lg flex items-center gap-2 transition-colors"
+                        className="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-lg flex items-center gap-2 transition-colors max-w-fit text-[12px] md:text-base"
                     >
                         <FaPlus />
                         افزودن محصول جدید
@@ -176,7 +176,7 @@ const ManageProducts = () => {
                 </div>
 
                 {/* Search and Filters */}
-                <div className="bg-white rounded-lg border border-gray-200 p-4 shadow-sm">
+                <div className="bg-white rounded-lg border border-gray-200 p-4 shadow-sm text-[12px] md:text-base">
                     <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
                         {/* Search */}
                         <div className="relative">
@@ -265,7 +265,7 @@ const ManageProducts = () => {
             ) : (
                 <div className="bg-white rounded-lg border border-gray-200 shadow-sm overflow-hidden">
                     {/* Table Header */}
-                    <div className="bg-gray-50 px-6 py-3 border-b border-gray-200">
+                    <div className="bg-gray-50 px-2 py-3 border-b border-gray-200">
                         <div className="flex items-center gap-4">
                             <input
                                 type="checkbox"
@@ -273,22 +273,22 @@ const ManageProducts = () => {
                                 onChange={handleSelectAll}
                                 className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500"
                             />
-                            <div className="grid grid-cols-12 gap-4 flex-1 text-sm font-medium text-gray-700">
-                                <div className="col-span-4">محصول</div>
-                                <div className="col-span-2">قیمت</div>
-                                <div className="col-span-2">موجودی</div>
-                                <div className="col-span-2">وضعیت</div>
-                                <div className="col-span-2">عملیات</div>
+                            <div className="grid grid-cols-8 md:grid-cols-12 gap-1 flex-1  text-[12px] md:text-sm font-medium text-gray-700">
+                                <div className="col-span-4 flex items-center justify-center">محصول</div>
+                                <div className="col-span-2 flex items-center justify-center">قیمت</div>
+                                <div className="col-span-2 flex items-center justify-center">موجودی</div>
+                                <div className="hidden md:block col-span-2">وضعیت</div>
+                                <div className="hidden md:block col-span-2">عملیات</div>
                             </div>
                         </div>
                     </div>
 
                     {/* Table Body */}
-                    <div className="divide-y divide-gray-200">
+                    <div className="divide-y divide-gray-200 w-full">
                         {products.map((product) => (
                             <div
                                 key={product.id}
-                                className="px-6 py-4 hover:bg-gray-50 cursor-pointer transition-colors"
+                                className="px-2 py-4 hover:bg-gray-50 cursor-pointer transition-colors"
                                 onClick={() => handleProductClick(product.id)}
                             >
                                 <div className="flex items-center gap-4">
@@ -300,7 +300,7 @@ const ManageProducts = () => {
                                         className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500"
                                     />
 
-                                    <div className="grid grid-cols-12 gap-4 flex-1">
+                                    <div className="grid grid-cols-8 md:grid-cols-12 gap-4 flex-1">
                                         {/* Product Info */}
                                         <div className="col-span-4 flex items-center gap-3">
                                             <div className="w-12 h-12 bg-gray-200 rounded-lg overflow-hidden flex-shrink-0">
@@ -317,30 +317,30 @@ const ManageProducts = () => {
                                                 )}
                                             </div>
                                             <div className="min-w-0">
-                                                <h3 className="font-medium text-gray-900 truncate">{product.name}</h3>
-                                                <p className="text-sm text-gray-500 truncate">{product.sku || 'بدون کد'}</p>
+                                                <h3 className="text-[12px] md:text-base font-medium text-gray-900 truncate">{product.name}</h3>
+                                                <p className="text-[12px] md:text-[14px] text-gray-500 truncate">{product.sku || 'بدون کد'}</p>
                                             </div>
                                         </div>
 
                                         {/* Price */}
-                                        <div className="col-span-2 flex items-center">
-                                            <span className="font-semibold text-gray-900">
+                                        <div className="col-span-2 flex items-center justify-center">
+                                            <span className="font-semibold text-gray-900 text-[11px] md:text-[14px]">
                                                 {formatPrice(product.price)} تومان
                                             </span>
                                         </div>
 
                                         {/* Stock */}
-                                        <div className="col-span-2 flex items-center">
-                                            <span className="font-medium text-gray-900">{product.stock}</span>
+                                        <div className="col-span-2 flex items-center justify-center">
+                                            <span className="font-medium text-gray-900 text-[10px] md:text-sm">{product.stock}</span>
                                         </div>
 
                                         {/* Status */}
-                                        <div className="col-span-2 flex items-center">
+                                        <div className="col-span-2 hidden md:flex items-center">
                                             {getStatusBadge(product.stock)}
                                         </div>
 
                                         {/* Actions */}
-                                        <div className="col-span-2 flex items-center gap-2">
+                                        <div className="col-span-2 hidden md:flex items-center gap-2">
 
                                             <button
                                                 onClick={(e) => handleEditProduct(product.id, e)}

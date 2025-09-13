@@ -1,4 +1,4 @@
-import { NavLink } from "react-router-dom";
+import { NavLink, useLocation } from "react-router-dom";
 import { MdOutlinePersonOutline } from "react-icons/md";
 import { TbLayoutDashboard } from "react-icons/tb";
 import { IoStorefrontOutline } from "react-icons/io5";
@@ -6,39 +6,82 @@ import { GrMapLocation } from "react-icons/gr";
 import { TiMessages } from "react-icons/ti";
 import { CiStar } from "react-icons/ci";
 import { FaStar } from "react-icons/fa";
+import { IoMdExit } from "react-icons/io";
+import { FaStore } from "react-icons/fa";
 import axios from "axios";
 import { AuthContext } from "../../auth/AuthContext";
 import { useState, useEffect, useContext } from "react";
+import { IoMenu } from "react-icons/io5";
 
 const SellerProfileMenu = () => {
 	const { authTokens } = useContext(AuthContext);
 	const [sellerProfile, setSellerProfile] = useState(null);
 	const [loading, setLoading] = useState(true);
+  	const [isMenuOpen, setIsMenuOpen] = useState(false);
+	const location = useLocation();
+
+	// Custom function to check if menu item should be active
+	const isMenuItemActive = (url) => {
+		if (url === "/seller-profile") {
+			// Dashboard should only be active on exact "/seller-profile" path
+			return location.pathname === "/seller-profile";
+		}
+		// Other menu items should be active when current path matches
+		return location.pathname === url;
+	};
 
 	const menuItems = [
 		{
 			id: 1,
 			title: "داشبورد فروشنده",
-			url: "", 
+			url: "/seller-profile", 
 			icon: <TbLayoutDashboard size={30} />,
 		},
 		{
 			id: 2,
 			title: "اطلاعات مالک کسب و کار",
-			url: "info", 
+			url: "/seller-profile/info", 
 			icon: <MdOutlinePersonOutline size={30} />,
 		},
 		{
 			id: 3,
 			title: "اطلاعات فروشنده و فروشگاه",
-			url: "store-info", 
+			url: "/seller-profile/store-info", 
 			icon: <IoStorefrontOutline size={30} />,
 		},
 		{
 			id: 4,
 			title: "آدرس ها",
-			url: "address", 
+			url: "/seller-profile/address", 
 			icon: <GrMapLocation size={30} />,
+		},
+	];
+
+	// Fixed menu for mobile (assuming these are seller-specific items)
+	const mobileMenu = [
+		{
+			id: 1,
+			title: "داشبورد فروشنده",
+			url: "/seller-profile", 
+			icon: <TbLayoutDashboard size={20} />,
+		},
+		{
+			id: 2,
+			title: "اطلاعات مالک کسب و کار",
+			url: "/seller-profile/info", 
+			icon: <MdOutlinePersonOutline size={20} />,
+		},
+		{
+			id: 3,
+			title: "اطلاعات فروشنده و فروشگاه",
+			url: "/seller-profile/store-info", 
+			icon: <IoStorefrontOutline size={20} />,
+		},
+		{
+			id: 4,
+			title: "آدرس ها",
+			url: "/seller-profile/address", 
+			icon: <GrMapLocation size={20} />,
 		},
 	];
 
@@ -66,6 +109,11 @@ const SellerProfileMenu = () => {
 		}
 	}, [authTokens]);
 
+	const handleLogout = () => {
+		// Add your logout logic here
+		console.log("Logout clicked");
+	};
+
 	if (loading) {
 		return (
 			<div className="m-6 flex flex-col gap-3 p-4">
@@ -77,9 +125,9 @@ const SellerProfileMenu = () => {
 	}
 
 	return (
-		<nav className="m-6 flex flex-col gap-3 p-4 border-1rounded-lg bg-transparent">
-			{/* باقی کد بدون تغییر */}
-			<div className="flex justify-between w-full items-center text-xl">
+		<nav className="relative m-6 flex flex-col gap-3 p-4 border-1rounded-lg bg-transparent h-screen">
+			{/* Desktop Profile Card */}
+			<div className="hidden lg:flex justify-between w-full items-center text-xl">
 				<div className="border rounded-lg border-gray-200 p-6 w-full h-72 flex flex-col items-center justify-between bg-white shadow-lg">
 					<div className="flex items-center justify-between flex-col">
 						<div className="w-18 h-18 bg-gray-200 rounded-full flex items-center justify-center shadow-lg">
@@ -108,7 +156,8 @@ const SellerProfileMenu = () => {
 				</div>
 			</div>
 
-			<div className="flex justify-between w-full items-center text-xl shadow-lg my-2 border border-gray-200 rounded-lg">
+			{/* Desktop Performance Card */}
+			<div className="hidden lg:flex justify-between w-full items-center text-xl shadow-lg my-2 border border-gray-200 rounded-lg">
 				<div className="w-full rounded-lg h-[25rem] flex flex-col items-center justify-baseline bg-white">
 					<div className="border-b border-gray-400 p-2 w-full flex items-center justify-center py-4 text-gray-600">
 						امتیاز عملکرد شما
@@ -167,7 +216,49 @@ const SellerProfileMenu = () => {
 				</div>
 			</div>
 
-			<div className="bg-white rounded-lg border border-gray-200 shadow-lg text-gray-600 text-lg">
+			{/* Mobile Menu Button - FIXED */}
+			<div className="lg:hidden relative bottom-8 left-8">
+				<button 
+					className="rounded-lg border border-gray-300 text-gray-400 p-2 bg-white shadow-sm w-fit h-10 flex items-center justify-center" 
+					onClick={() => setIsMenuOpen(!isMenuOpen)}
+				>
+					<IoMenu className="w-5 h-5"/>
+				</button>
+
+				{/* Mobile Menu - FIXED POSITIONING */}
+				{isMenuOpen && (
+					<div className="absolute top-12 left-0 right-0 z-50 bg-white border border-gray-200 shadow-lg rounded-lg overflow-hidden min-w-[280px]">
+						{mobileMenu.map((item) => (
+							<NavLink 
+								to={item.url} 
+								key={item.id} 
+								onClick={() => setIsMenuOpen(false)}
+								className={`flex items-center gap-4 px-4 py-3 text-sm font-medium border-b border-gray-200 hover:bg-gray-50 transition-colors ${
+									isMenuItemActive(item.url) ? 'bg-blue-50 text-blue-600' : 'text-gray-600'
+								}`}
+							>
+								<span className="text-lg">{item.icon}</span>
+								<span className="flex-1">{item.title}</span>
+							</NavLink>
+						))}
+
+						{/* Mobile Logout Button */}
+						<button 
+							onClick={() => {
+								setIsMenuOpen(false);
+								handleLogout();
+							}}
+							className="w-full flex items-center gap-4 px-4 py-3 text-sm font-medium hover:bg-red-50 transition-colors text-red-600"
+						>
+							<IoMdExit className="text-lg" />
+							<span className="flex-1">خروج از حساب کاربری</span>
+						</button>
+					</div>
+				)}
+			</div>
+
+			{/* Desktop Menu */}
+			<div className="hidden lg:block bg-white rounded-lg border border-gray-200 shadow-lg text-gray-600 text-lg">
 				{menuItems.map((item) =>
 					item.id !== 4 ? (
 						<div
@@ -177,11 +268,9 @@ const SellerProfileMenu = () => {
 							<div className="">{item.icon}</div>
 							<NavLink
 								to={item.url}
-								end
-								className={({ isActive }) =>
-									isActive
-										? "font-bold text-[#1bb1d4]"
-										: "text-gray-700"
+								className={isMenuItemActive(item.url)
+									? "font-bold text-[#1bb1d4]"
+									: "text-gray-700"
 								}
 							>
 								{item.title}
@@ -195,11 +284,9 @@ const SellerProfileMenu = () => {
 							<div className="">{item.icon}</div>
 							<NavLink
 								to={item.url}
-								end
-								className={({ isActive }) =>
-									isActive
-										? "font-bold text-[#1bb1d4]"
-										: "text-gray-700"
+								className={isMenuItemActive(item.url)
+									? "font-bold text-[#1bb1d4]"
+									: "text-gray-700"
 								}
 							>
 								{item.title}

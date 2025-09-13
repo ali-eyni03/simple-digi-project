@@ -75,31 +75,45 @@ const SellerStoreInfo = () => {
     }));
   };
 
+  // Fixed tab click handler with debugging
+  const handleTabClick = (tabId) => {
+    console.log('Tab clicked:', tabId); // Debug log
+    setActiveTab(tabId);
+  };
+
   return (
-    <div className="bg-white p-4 rounded-lg shadow-lg mt-4 border border-gray-200">
-      {/* تب‌ها */}
-      <div className="flex mb-4 justify-between p-2">
+   <div className="min-h-screen">
+     <div className="bg-white p-1 rounded-lg shadow-lg mt-4 border border-gray-200">
+      {/* Tab Navigation */}
+      <div className="flex gap-0.5 mb-2 justify-between p-1 text-[12px] lg:text-sm border-b border-gray-200">
         {tabs.map((tab) => (
           <button
             key={tab.id}
-            className={`px-4 py-2 font-medium cursor-pointer ${
+            type="button"
+            className={`px-3 py-2 font-medium cursor-pointer transition-all duration-200 relative ${
               activeTab === tab.id
-                ? "border-b-2 border-blue-500 text-blue-500"
+                ? "text-blue-600 font-semibold"
                 : "text-gray-500 hover:text-blue-500"
             }`}
-            onClick={() => setActiveTab(tab.id)}
+            onClick={() => handleTabClick(tab.id)}
           >
             {tab.label}
+            {/* Active tab indicator */}
+            {activeTab === tab.id && (
+              <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-blue-600 rounded-t-sm"></div>
+            )}
           </button>
         ))}
       </div>
 
-      {/* محتوای تب‌ها */}
-      <div>
+      
+
+      {/* Tab Content */}
+      <div className="min-h-[400px] text-[12px] md:text-sm">
         {activeTab === "seller" && (
-          <div className="space-y-4 grid grid-cols-2 gap-4 p-2">
+          <div className="space-y-4 grid grid-cols-1 md:grid-cols-2 gap-2 p-2 ">
             <div className="flex gap-2 items-center justify-baseline">
-              <label htmlFor="first-name">نام :</label>
+              <label htmlFor="first-name" className="min-w-fit">نام :</label>
               <input
                 type="text"
                 placeholder=""
@@ -108,7 +122,7 @@ const SellerStoreInfo = () => {
               />
             </div>
             <div className="flex gap-2 items-center justify-baseline">
-              <label htmlFor="last-name">نام خانوادگی :</label>
+              <label htmlFor="last-name" className="min-w-fit">نام خانوادگی :</label>
               <input
                 type="text"
                 placeholder=""
@@ -118,7 +132,7 @@ const SellerStoreInfo = () => {
             </div>
 
             <div className="flex gap-2 items-center justify-baseline">
-              <label htmlFor="national-id">کد ملی :</label>
+              <label htmlFor="national-id" className="min-w-fit">کد ملی :</label>
               <input
                 id="national-id"
                 type="text"
@@ -127,7 +141,7 @@ const SellerStoreInfo = () => {
               />
             </div>
             <div className="flex gap-2 items-center justify-baseline">
-              <label htmlFor="seller-id">شماره شناسنامه :</label>
+              <label htmlFor="seller-id" className="min-w-fit">شماره شناسنامه :</label>
               <input
                 id="seller-id"
                 type="text"
@@ -137,7 +151,7 @@ const SellerStoreInfo = () => {
             </div>
 
             <div className="flex gap-2 items-center justify-baseline">
-              <label htmlFor="birth-date">تاریخ تولد :</label>
+              <label htmlFor="birth-date" className="min-w-fit">تاریخ تولد :</label>
               <input
                 id="birth-date"
                 type="date"
@@ -145,7 +159,7 @@ const SellerStoreInfo = () => {
               />
             </div>
             <div className="flex gap-2 items-center justify-baseline">
-              <label htmlFor="id-image">تصویر شناسنامه :</label>
+              <label htmlFor="id-image" className="min-w-fit">تصویر شناسنامه :</label>
               <div className="w-7/10">
                 <input
                   id="id-image"
@@ -167,6 +181,7 @@ const SellerStoreInfo = () => {
                           onClick={() => setModalImage(image)}
                         />
                         <button
+                          type="button"
                           onClick={() => removeImage('idImage', image.id)}
                           className="absolute -top-1 -right-1 bg-red-500 text-white rounded-full w-5 h-5 flex items-center justify-center text-xs opacity-0 group-hover:opacity-100 transition-opacity"
                         >
@@ -182,7 +197,7 @@ const SellerStoreInfo = () => {
               </div>
             </div>
             <div className="flex gap-2 items-center justify-baseline">
-              <label htmlFor="profile-image">تصویر پروفایل :</label>
+              <label htmlFor="profile-image" className="min-w-fit">تصویر پروفایل :</label>
               <div className="w-7/10">
                 <input
                   id="profile-image"
@@ -204,6 +219,7 @@ const SellerStoreInfo = () => {
                           onClick={() => setModalImage(image)}
                         />
                         <button
+                          type="button"
                           onClick={() => removeImage('profileImage', image.id)}
                           className="absolute -top-1 -right-1 bg-red-500 text-white rounded-full w-5 h-5 flex items-center justify-center text-xs opacity-0 group-hover:opacity-100 transition-opacity"
                         >
@@ -222,9 +238,9 @@ const SellerStoreInfo = () => {
         )}
 
         {activeTab === "bank" && (
-          <div className="space-y-4 grid grid-cols-2 gap-4 p-2">
+          <div className="space-y-4 grid grid-cols-1 md:grid-cols-2 gap-2 p-2 ">
             <div className="flex gap-2 items-center justify-baseline">
-              <label htmlFor="account-holder">نام کامل صاحب حساب:</label>
+              <label htmlFor="account-holder" className="min-w-fit">نام کامل صاحب حساب:</label>
               <input
                 type="text"
                 placeholder=""
@@ -234,7 +250,7 @@ const SellerStoreInfo = () => {
             </div>
 
             <div className="flex gap-2 items-center justify-baseline">
-              <label htmlFor="shaba-number">شماره شبا :</label>
+              <label htmlFor="shaba-number" className="min-w-fit">شماره شبا :</label>
               <input
                 id="shaba-number"
                 type="text"
@@ -243,7 +259,7 @@ const SellerStoreInfo = () => {
               />
             </div>
             <div className="flex gap-2 items-center justify-baseline">
-              <label htmlFor="card-number">شماره کارت :</label>
+              <label htmlFor="card-number" className="min-w-fit">شماره کارت :</label>
               <input
                 id="card-number"
                 type="text"
@@ -252,7 +268,7 @@ const SellerStoreInfo = () => {
               />
             </div>
             <div className="flex gap-2 items-center justify-baseline">
-              <label htmlFor="bank-name">نام بانک :</label>
+              <label htmlFor="bank-name" className="min-w-fit">نام بانک :</label>
               <div className="relative w-7/10">
                 <input
                   id="bank-name"
@@ -289,9 +305,9 @@ const SellerStoreInfo = () => {
         )}
 
         {activeTab === "contact" && (
-          <div className="space-y-4 grid grid-cols-2 gap-4 p-2">
+          <div className="space-y-4 grid grid-cols-1 md:grid-cols-2 gap-2 p-2 ">
             <div className="flex gap-2 items-center justify-baseline">
-              <label htmlFor="mobile">شماره موبایل :</label>
+              <label htmlFor="mobile" className="min-w-fit">شماره موبایل :</label>
               <input
                 id="mobile"
                 type="text"
@@ -300,7 +316,7 @@ const SellerStoreInfo = () => {
               />
             </div>
             <div className="flex gap-2 items-center justify-baseline">
-              <label htmlFor="phone">شماره تلفن ثابت :</label>
+              <label htmlFor="phone" className="min-w-fit">شماره تلفن ثابت :</label>
               <input
                 id="phone"
                 type="text"
@@ -308,8 +324,8 @@ const SellerStoreInfo = () => {
                 className={inputClasses}
               />
             </div>
-            <div className="flex gap-2 items-center justify-baseline col-span-2">
-              <label htmlFor="email">ایمیل :</label>
+            <div className="flex gap-2 items-center justify-baseline col-span-full">
+              <label htmlFor="email" className="min-w-fit">ایمیل :</label>
               <input
                 id="email"
                 type="email"
@@ -321,9 +337,9 @@ const SellerStoreInfo = () => {
         )}
 
         {activeTab === "address" && (
-          <div className="space-y-4 grid grid-cols-2 gap-4 p-2">
+          <div className="space-y-4 grid grid-cols-1 md:grid-cols-2 gap-2 p-2">
             <div className="flex gap-2 items-center justify-baseline">
-              <label htmlFor="province">استان :</label>
+              <label htmlFor="province" className="min-w-fit">استان :</label>
               <input
                 id="province"
                 type="text"
@@ -332,7 +348,7 @@ const SellerStoreInfo = () => {
               />
             </div>
             <div className="flex gap-2 items-center justify-baseline">
-              <label htmlFor="city">شهر :</label>
+              <label htmlFor="city" className="min-w-fit">شهر :</label>
               <input
                 id="city"
                 type="text"
@@ -341,7 +357,7 @@ const SellerStoreInfo = () => {
               />
             </div>
             <div className="flex gap-2 items-center justify-baseline">
-              <label htmlFor="street">خیابان / محله :</label>
+              <label htmlFor="street" className="min-w-fit">خیابان / محله :</label>
               <input
                 id="street"
                 type="text"
@@ -350,7 +366,7 @@ const SellerStoreInfo = () => {
               />
             </div>
             <div className="flex gap-2 items-center justify-baseline">
-              <label htmlFor="plate">پلاک :</label>
+              <label htmlFor="plate" className="min-w-fit">پلاک :</label>
               <input
                 id="plate"
                 type="text"
@@ -358,8 +374,8 @@ const SellerStoreInfo = () => {
                 className={inputClasses}
               />
             </div>
-            <div className="flex gap-2 items-center justify-baseline col-span-2">
-              <label htmlFor="postal-code">کد پستی :</label>
+            <div className="flex gap-2 items-center justify-baseline col-span-full">
+              <label htmlFor="postal-code" className="min-w-fit">کد پستی :</label>
               <input
                 id="postal-code"
                 type="text"
@@ -381,6 +397,7 @@ const SellerStoreInfo = () => {
               className="max-w-full max-h-full object-contain rounded-lg"
             />
             <button
+              type="button"
               onClick={() => setModalImage(null)}
               className="absolute top-2 right-2 bg-red-500 text-white rounded-full w-8 h-8 flex items-center justify-center text-lg font-bold hover:bg-red-600 transition-colors"
             >
@@ -393,6 +410,7 @@ const SellerStoreInfo = () => {
         </div>
       )}
     </div>
+   </div>
   );
 };
 

@@ -203,7 +203,7 @@ const getProfileInfo = () => {
 		switch (currentModalType) {
 			case "fullname":
 				return (
-					<div className="flex flex-col gap-3">
+					<div className="flex flex-col gap-3 text-[12px] md:text-base w-full">
 						<label htmlFor="firstName" className="text-gray-500">
 							نام
 						</label>
@@ -362,7 +362,8 @@ const getProfileInfo = () => {
 			
 
 			{/* Profile Items Grid */}
-			<div className="grid grid-cols-2 gap-4 border border-gray-200 rounded-lg m-4 p-4 bg-white shadow-lg">
+			<div className="min-h-screen">
+				<div className="grid grid-cols-2 gap-4 border border-gray-200 rounded-lg m-4 p-4 bg-white shadow-lg ">
 				{profileItems.map((item) => (
 					<div
 						key={item.id}
@@ -370,30 +371,31 @@ const getProfileInfo = () => {
 						onClick={item.editFunction}
 					>
 						<div className="flex flex-col gap-1">
-							<p className="text-gray-500 text-sm">{item.title}</p>
+							<p className="text-gray-500 text-[12px] lg:text-base">{item.title}</p>
 							<p className="text-gray-800">{item.text}</p>
 						</div>
-						<div className="text-gray-600">{item.icon}</div>
+						<div className="text-gray-600 ">{item.icon}</div>
 					</div>
 				))}
+			</div>
 			</div>
 
 			{/* Modal */}
 			<Modal isOpen={isModalOpen} onClose={closeModal}>
-				<h2 className="text-lg font-semibold mb-4">{getModalTitle()}</h2>
+				<h2 className="text-base font-semibold mb-4">{getModalTitle()}</h2>
 				
 				{renderModalContent()}
 
 				<div className="flex justify-end gap-2 mt-6">
 					<button
 						onClick={closeModal}
-						className="px-4 py-2 bg-gray-300 text-gray-700 rounded-lg hover:bg-gray-400"
+						className="px-4 py-2 bg-gray-300 text-gray-700 rounded-lg hover:bg-gray-400 text-[12px] md:text-base"
 					>
 						انصراف
 					</button>
 					<button
 						onClick={handleSave}
-						className="px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600"
+						className="px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 text-[12px] md:text-base"
 					>
 						ذخیره
 					</button>

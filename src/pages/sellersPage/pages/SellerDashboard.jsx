@@ -20,7 +20,7 @@ function CardItem({ products }) {
 
 	if (!products || products.length === 0) {
 		return (
-			<div className="w-full max-w-[820px] mx-auto bg-white rounded-lg p-8 text-center">
+			<div className="w-full max-w-[820px] mx-auto bg-white rounded-lg p-8 text-center shadow-sm">
 				<div className="text-gray-400 mb-4">
 					<RiShoppingCartLine size={48} className="mx-auto" />
 				</div>
@@ -169,10 +169,10 @@ const ProfileHomePage = () => {
 	}
 
 	return (
-		<div className="p-6">
+		<div className="p-6 min-h-screen">
 			{/* Welcome Section */}
-			<div className="mb-6 bg-gradient-to-r from-blue-500 to-purple-600 text-white rounded-lg p-6">
-				<h1 className="text-2xl font-bold mb-2">
+			<div className="mb-6 bg-gradient-to-r from-blue-500 to-purple-600 text-white rounded-lg p-3 text-[12px] lg:text-base">
+				<h1 className="text-lg lg:text-xl font-bold mb-2">
 					خوش آمدید، {sellerProfile?.store_name || 'فروشنده'}
 				</h1>
 				<p className="opacity-90">
@@ -180,9 +180,9 @@ const ProfileHomePage = () => {
 				</p>
 			</div>
 
-			<div className="grid gap-[2rem] grid-cols-3">
+			<div className="grid gap-[2rem] grid-cols-1 lg:grid-cols-3">
 				{/* Status indicators */}
-				<div className="w-full relative h-12 flex items-center justify-baseline">
+				<div className="w-full relative h-12 hidden  lg:flex items-center justify-baseline">
 					<div className="absolute right-0 -top-1 flex items-center justify-center bg-[#dff9f2] w-7 h-7 rounded-full">
 						<div className="rounded-full w-4 h-4 bg-[#55cfb3]"></div>
 					</div>
@@ -192,7 +192,7 @@ const ProfileHomePage = () => {
 					</div>
 				</div>
 				
-				<div className="w-full relative h-12 flex items-center justify-baseline">
+				<div className="w-full relative h-12 hidden  lg:flex items-center justify-baseline">
 					<div className="absolute right-0 -top-1 flex items-center justify-center bg-[#dff9f2] w-7 h-7 rounded-full">
 						<div className="rounded-full w-4 h-4 bg-[#55cfb3]"></div>
 					</div>
@@ -202,7 +202,7 @@ const ProfileHomePage = () => {
 					</div>
 				</div>
 				
-				<div className="w-full relative h-12 flex items-center justify-baseline">
+				<div className="w-full relative h-12 hidden  lg:flex items-center justify-baseline">
 					<div className="absolute right-0 -top-1 flex items-center justify-center bg-[#dff9f2] w-7 h-7 rounded-full">
 						<div className="rounded-full w-4 h-4 bg-[#55cfb3]"></div>
 					</div>
@@ -213,38 +213,40 @@ const ProfileHomePage = () => {
 				</div>
 
 				{/* Action cards */}
-				<div className="border border-gray-200 shadow-lg bg-white p-4 rounded-lg relative box1">
-					<span className="font-medium text-lg text-gray-600">افزودن محصول جدید</span>
+				<div className="border border-gray-200 shadow-lg bg-white p-4 rounded-lg relative box1 ">
+					<span className="font-medium text-[13px] md:text-base text-gray-600">افزودن محصول جدید</span>
 					<Link 
 						to="/seller-profile/products" 
-						className="text-white bg-blue-400 w-11 h-11 flex items-center justify-center rounded-2xl absolute -left-5 top-2 cursor-pointer hover:bg-blue-500 transition-colors"
+						className="text-white bg-blue-400 w-8 h-8 md:w-11 md:h-11 flex items-center justify-center rounded-lg md:rounded-xl absolute -left-4 top-3 md:-left-5 md:top-2 cursor-pointer hover:bg-blue-500 transition-colors"
 						title="افزودن محصول جدید"
 					>
 						<TiPlus size={20} />
 					</Link>
 				</div>
+
+				<div className="border border-gray-200 shadow-lg bg-white p-4 rounded-lg relative box1">
+					<span className="font-medium text-[13px] md:text-base text-gray-600">وضعیت پرداخت | فعال</span>
+					<div className="text-white bg-green-500 w-8 h-8 md:w-11 md:h-11 flex items-center justify-center rounded-xl absolute -left-4 top-3 md:-left-5 md:top-2 cursor-pointer">
+						<TiTick size={24} />
+					</div>
+				</div>
 				
 				<div className="border border-gray-200 shadow-lg bg-white p-4 rounded-lg relative flex justify-between items-center">
-					<span className="font-medium text-lg text-gray-600">تنوع فعال در پرموشن ها</span>
+					<span className="font-medium text-[13px] md:text-base text-gray-600">تنوع فعال در پرموشن ها</span>
 					<div className="flex items-center justify-center gap-1 text-gray-400 font-medium">
 						<span>{formatNumber(productStats?.products_with_discount || 0)}</span>
 						<span><FaAngleLeft /></span>
 					</div>
 				</div>
 				
-				<div className="border border-gray-200 shadow-lg bg-white p-4 rounded-lg relative box1">
-					<span className="font-medium text-lg text-gray-600">وضعیت پرداخت | فعال</span>
-					<div className="text-white bg-green-500 w-11 h-11 flex items-center justify-center rounded-xl absolute -left-5 top-2 cursor-pointer">
-						<TiTick size={24} />
-					</div>
-				</div>
 
 				{/* Inventory Management - Updated with real data */}
-				<div className="bg-white rounded-lg border border-gray-200 shadow-lg flex items-center justify-center flex-col">
-					<div className="border-b border-gray-200 p-4 w-full text-right text-gray-600 font-bold text-lg">
+				<div className="bg-white rounded-lg border border-gray-200 shadow-lg flex items-center justify-baseline flex-col ">
+					<div className="border-b border-gray-200 p-4 w-full text-right text-gray-600 font-bold text-[13px] md:text-base">
 						<p>مدیریت موجودی انبار</p>
 					</div>
-					{[
+					<div className="grid grid-cols-2 md:grid-cols-1 w-full">
+						{[
 						{ label: "کل تنوع های فعال", value: formatNumber(productStats?.total_products) },
 						{ label: "محصولات ناموجود", value: formatNumber(productStats?.out_of_stock) },
 						{ label: "محصولات کم موجود", value: formatNumber(productStats?.low_stock) },
@@ -254,20 +256,21 @@ const ProfileHomePage = () => {
 					].map((item, index) => (
 						<div key={index} className="flex items-center justify-between w-full p-4 hover:bg-gray-50 transition-colors">
 							<Link to="/seller-profile/products" className="text-gray-500 flex items-center justify-center gap-1 text-base font-semibold hover:text-blue-600 transition-colors">
-								<span>{item.label}</span>
-								<span><FaAngleDown size={14} /></span>
+								<span className="text-[10px] md:text-base">{item.label}</span>
 							</Link>
-							<p className="font-semibold text-3xl text-gray-600">{item.value}</p>
+							<p className="font-semibold text-xl text-gray-600">{item.value}</p>
 						</div>
 					))}
+					</div>
 				</div>
 
 				{/* Order Management - Placeholder for future implementation */}
-				<div className="bg-white rounded-lg border border-gray-200 shadow-lg flex items-center justify-center flex-col">
+				<div className="bg-white rounded-lg border border-gray-200 shadow-lg flex items-center justify-baseline flex-col">
 					<div className="border-b border-gray-200 p-4 w-full text-right text-gray-600 font-bold text-lg">
 						<p>مدیریت سفارشات</p>
 					</div>
-					{[
+					<div className="w-full grid grid-cols-2 md:grid-cols-1">
+						{[
 						{ label: "سفارشات جدید", value: formatNumber(0) },
 						{ label: "سفارشات در حال پردازش", value: formatNumber(0) },
 						{ label: "سفارشات ارسال شده", value: formatNumber(0) },
@@ -276,21 +279,22 @@ const ProfileHomePage = () => {
 						{ label: "سفارشات لغو شده", value: formatNumber(0) },
 					].map((item, index) => (
 						<div key={index} className="flex items-center justify-between w-full p-4 hover:bg-gray-50 transition-colors">
-							<Link to="/seller-profile/orders" className="text-gray-500 flex items-center justify-center gap-1 text-base font-semibold hover:text-blue-600 transition-colors">
-								<span>{item.label}</span>
-								<span><FaAngleDown size={14} /></span>
+							<Link to="/seller-profile/orders" className="text-gray-500 flex items-center justify-center gap-1  font-semibold hover:text-blue-600 transition-colors">
+								<span className="text-[10px] md:text-base">{item.label}</span>
 							</Link>
-							<p className="font-semibold text-3xl text-gray-600">{item.value}</p>
+							<p className="font-semibold text-xl text-gray-600">{item.value}</p>
 						</div>
 					))}
+					</div>
 				</div>
 
 				{/* Pricing Management - Enhanced with real data */}
-				<div className="bg-white rounded-lg border border-gray-200 shadow-lg flex items-center justify-center flex-col">
+				<div className="bg-white rounded-lg border border-gray-200 shadow-lg flex items-center justify-baseline flex-col">
 					<div className="border-b border-gray-200 p-4 w-full text-right text-gray-600 font-bold text-lg">
 						<p>مدیریت قیمت گذاری</p>
 					</div>
-					{[
+					<div className="grid grid-cols-2 md:grid-cols-1 w-full">
+						{[
 						{ label: "محصولات با تخفیف", value: formatNumber(0) }, // Add to API
 						{ label: "محصولات بدون تخفیف", value: formatNumber(productStats?.total_products) },
 						{ label: "حداکثر تخفیف", value: "0%" },
@@ -299,20 +303,21 @@ const ProfileHomePage = () => {
 						{ label: "قیمت های نیاز به بررسی", value: formatNumber(0) },
 					].map((item, index) => (
 						<div key={index} className="flex items-center justify-between w-full p-4 hover:bg-gray-50 transition-colors">
-							<div className="text-gray-500 flex items-center justify-center gap-1 text-base font-semibold">
+							<div className="text-gray-500 flex items-center justify-between gap-1 text-[11px] md:text-base font-semibold">
 								<span>{item.label}</span>
-								<span><FaAngleDown size={14} /></span>
 							</div>
-							<p className="font-semibold text-3xl text-gray-600">{item.value}</p>
+							<p className="font-semibold text-xl text-gray-600">{item.value}</p>
 						</div>
 					))}
+					</div>
 				</div>
 			</div>
 
 			{/* Recent Products Section */}
-			<div className="mt-8 ">
-				<div className="flex items-center justify-between mb-6">
-					<h2 className="text-xl font-bold text-gray-800">محصولات اخیر</h2>
+			<div className="mt-8 text-[12px] lg:text-base w-full ">
+				<div className="flex items-center justify-between mb-6 w-full
+				">
+					<h2 className="text-lg font-bold text-gray-800">محصولات اخیر</h2>
 					<Link 
 						to="/seller-profile/products" 
 						className="text-blue-500 hover:text-blue-600 flex items-center gap-2"
@@ -325,12 +330,12 @@ const ProfileHomePage = () => {
 			</div>
 
 			{/* Quick Stats Summary */}
-			<div className="mt-8 grid grid-cols-1 md:grid-cols-4 gap-4 ">
+			<div className="mt-8 grid grid-cols-2 md:grid-cols-4 gap-4 text-[11px] lg:text-base">
 				<div className="bg-blue-100 p-4 rounded-lg  border-l-6 border-blue-500 shadow-lg">
 					<div className="flex items-center justify-between">
 						<div>
 							<p className="text-blue-600 font-semibold">کل محصولات</p>
-							<p className="text-2xl font-bold text-blue-800">
+							<p className="text-xl font-bold text-blue-800">
 								{formatNumber(productStats?.total_products)}
 							</p>
 						</div>
@@ -342,7 +347,7 @@ const ProfileHomePage = () => {
 					<div className="flex items-center justify-between">
 						<div>
 							<p className="text-green-600 font-semibold">کل موجودی</p>
-							<p className="text-2xl font-bold text-green-800">
+							<p className="text-xl font-bold text-green-800">
 								{formatNumber(productStats?.total_stock)}
 							</p>
 						</div>
@@ -354,7 +359,7 @@ const ProfileHomePage = () => {
 					<div className="flex items-center justify-between">
 						<div>
 							<p className="text-red-600 font-semibold">ناموجود</p>
-							<p className="text-2xl font-bold text-red-800">
+							<p className="text-xl font-bold text-red-800">
 								{formatNumber(productStats?.out_of_stock)}
 							</p>
 						</div>
@@ -366,7 +371,7 @@ const ProfileHomePage = () => {
 					<div className="flex items-center justify-between">
 						<div>
 							<p className="text-yellow-600 font-semibold">کم موجود</p>
-							<p className="text-2xl font-bold text-yellow-800">
+							<p className="text-xl font-bold text-yellow-800">
 								{formatNumber(productStats?.low_stock)}
 							</p>
 						</div>
