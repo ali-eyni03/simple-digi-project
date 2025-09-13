@@ -156,7 +156,7 @@ const SellerProductDetail = () => {
 				<div className="text-center">
 					<p className="text-gray-600 mb-4">محصول یافت نشد</p>
 					<Link 
-						to="/seller-profile/products"
+						to="/seller-profile/products/manage"
 						className="px-6 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 transition-colors"
 					>
 						بازگشت به لیست محصولات
@@ -173,7 +173,7 @@ const SellerProductDetail = () => {
 				<div className="bg-green-100 border border-green-300 text-green-700 p-3 rounded-lg mb-6">
 					<div className="flex items-center">
 						<MdOutlineSecurity className="text-lg ml-2" />
-						<span className="text-sm">حالت دمو - تمام عملیات شبیه‌سازی می‌شود</span>
+						<span className="text-[12px]">حالت دمو - تمام عملیات شبیه‌سازی می‌شود</span>
 					</div>
 				</div>
 			)}
@@ -182,20 +182,20 @@ const SellerProductDetail = () => {
 			<div className="flex items-center justify-between mb-6">
 				<div className="flex items-center space-x-4 space-x-reverse">
 					<Link 
-						to="/seller-profile/products"
-						className="flex items-center text-blue-600 hover:text-blue-800 transition-colors"
+						to="/seller-profile/products/manage"
+						className="flex items-center text-blue-600 hover:text-blue-800 transition-colors underline underlined"
 					>
 						<FaArrowLeft className="ml-2" />
-						<span>بازگشت به لیست محصولات</span>
+						<span className="text-[12px]">بازگشت به لیست محصولات</span>
 					</Link>
-					<h1 className="text-xl md:text-2xl font-bold text-gray-900">جزئیات محصول</h1>
+					<h1 className="hidden lg:static text-[12px]  md:text-2xl font-bold text-gray-900 border w-full">جزئیات محصول</h1>
 				</div>
 				
-				<div className="flex items-center space-x-2 space-x-reverse">
+				<div className="flex gap-1 items-center space-x-2 space-x-reverse">
 					<button
 						onClick={handleEdit}
 						disabled={loading}
-						className={`flex items-center space-x-2 space-x-reverse px-4 py-2 rounded-lg transition-colors ${
+						className={`flex items-center gap-1 justify-center p-2 rounded-lg transition-colors text-[12px] max-w-fit ${
 							editMode 
 								? 'bg-green-600 text-white hover:bg-green-700' 
 								: 'bg-blue-600 text-white hover:bg-blue-700'
@@ -207,7 +207,7 @@ const SellerProductDetail = () => {
 					
 					<button
 						onClick={handleDelete}
-						className="flex items-center space-x-2 space-x-reverse px-4 py-2 bg-red-600 text-white rounded-lg hover:bg-red-700 transition-colors"
+						className="flex gap-1 items-center justify-center p-2 bg-red-600 text-white rounded-lg hover:bg-red-700 transition-colors text-[12px] "
 					>
 						<MdDelete />
 						<span>حذف</span>
@@ -301,7 +301,7 @@ const SellerProductDetail = () => {
 									className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
 								/>
 							) : (
-								<div className="flex items-center space-x-2 space-x-reverse">
+								<div className="flex gap-2 items-center space-x-2 space-x-reverse text-sm">
 									<div className={`w-3 h-3 rounded-full ${product.stock > 0 ? 'bg-green-400' : 'bg-red-400'}`}></div>
 									<span className={`${product.stock > 0 ? 'text-green-600' : 'text-red-600'}`}>
 										{product.stock > 0 ? `${product.stock} عدد موجود` : 'ناموجود'}
@@ -312,7 +312,7 @@ const SellerProductDetail = () => {
 
 						{/* Description */}
 						<div>
-							<label className="block text-sm font-medium text-gray-700 mb-2">توضیحات</label>
+							<label className="block text-base font-medium text-gray-700 mb-2">توضیحات</label>
 							{editMode ? (
 								<textarea
 									value={editData.description}
@@ -321,7 +321,7 @@ const SellerProductDetail = () => {
 									className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent resize-none"
 								/>
 							) : (
-								<div className="text-gray-700 leading-relaxed bg-gray-50 p-4 rounded-lg">
+								<div className="text-gray-700 leading-relaxed bg-gray-50 p-4 rounded-lg text-justify text-sm">
 									{product.description || 'توضیحات محصول در دسترس نیست.'}
 								</div>
 							)}
@@ -343,12 +343,12 @@ const SellerProductDetail = () => {
 					{/* Product Attributes */}
 					{product.base_product_data?.attributes && (
 						<div>
-							<h3 className="text-lg font-semibold text-gray-900 mb-3">مشخصات فنی</h3>
+							<h3 className="text-base md:text-lg font-semibold text-gray-900 mb-3">مشخصات فنی</h3>
 							<div className="space-y-2">
 								{Object.entries(product.base_product_data.attributes).map(([key, value]) => (
 									<div key={key} className="flex justify-between py-2 border-b border-gray-200">
-										<span className="text-gray-600">{key}:</span>
-										<span className="text-gray-900 font-medium">
+										<span className="text-gray-600 text-sm md:text-base">{key}:</span>
+										<span className="text-gray-900 font-medium text-sm md:text-base">
 											{typeof value === 'object' && value !== null ? (
 												typeof value.length !== 'undefined' && typeof value.width !== 'undefined' && typeof value.height !== 'undefined' ? (
 													`${value.length} × ${value.width} × ${value.height} سانتی‌متر`

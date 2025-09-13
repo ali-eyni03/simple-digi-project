@@ -72,14 +72,14 @@ const ProductCard = ({ product }) => {
       </div>
 
       {/* Product Info */}
-      <div className="p-4">
+      <div className="p-2">
         {/* Category */}
         {product.category_name && (
           <p className="text-xs text-blue-600 mb-2">{product.category_name}</p>
         )}
 
         {/* Product Name */}
-        <h3 className="font-medium text-gray-800 mb-3 line-clamp-2 min-h-[48px]">
+        <h3 className="font-medium text-xs md:text-base text-gray-800 mb-3 line-clamp-2 min-h-[48px]">
           {product.name}
         </h3>
 
@@ -104,7 +104,7 @@ const ProductCard = ({ product }) => {
                 </p>
               </>
             ) : (
-              <p className="text-lg font-bold text-gray-900">
+              <p className="text-[12px] md:text-lg font-bold text-gray-900">
                 {formatPrice(product.price)}
                 <span className="text-sm font-normal mr-1">تومان</span>
               </p>
@@ -125,7 +125,7 @@ const ProductCard = ({ product }) => {
         <button
           onClick={handleAddToCart}
           disabled={product.stock === 0}
-          className={`w-full py-2 px-4 rounded-lg font-medium text-sm transition-colors duration-200 flex items-center justify-center gap-2 ${
+          className={`w-full py-2 px-4 rounded-lg font-medium text-xs md:text-sm transition-colors duration-200 flex items-center justify-center gap-2 ${
             product.stock > 0
               ? user
                 ? 'bg-blue-500 text-white hover:bg-blue-600'

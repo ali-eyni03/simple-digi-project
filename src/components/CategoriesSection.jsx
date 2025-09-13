@@ -93,7 +93,7 @@ const CategoriesSection = () => {
           </Link>
         </div>
 
-        <div className="grid grid-cols-2 sm:grid-cols-4 md:grid-cols-6 lg:grid-cols-8 gap-2 md:gap-4">
+        <div className="grid grid-cols-4 md:grid-cols-6 lg:grid-cols-8 gap-2 md:gap-4">
           {categories.map((category) => (
             <Link
               key={category.id}
@@ -101,7 +101,7 @@ const CategoriesSection = () => {
               className="group"
             >
               <div className="bg-white rounded-lg shadow-sm hover:shadow-md p-3 md:p-4 text-center group-hover:scale-105 transform transition-transform duration-200">
-                <div className="w-12 h-12 md:w-16 md:h-16 mx-auto mb-2 md:mb-3 flex items-center justify-center text-blue-600 group-hover:text-blue-800 transition-colors">
+                <div className="w-12 h-12 md:w-16 md:h-16 mx-auto mb-2 md:mb-3 flex items-center justify-center text-blue-600 group-hover:text-blue-800 transition-colors ">
                   {categoryIcons[category.name] || <MdCategory className="w-6 h-6 md:w-8 md:h-8" />}
                 </div>
                 <h3 className="text-xs md:text-sm font-medium text-gray-800 group-hover:text-blue-800 transition-colors truncate">

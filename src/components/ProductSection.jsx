@@ -104,8 +104,8 @@ const ProductsSection = ({ title = "محصولات جدید", category = null })
     <div className="w-full py-8 md:py-12 bg-white">
       <div className="max-w-7xl mx-auto px-4">
         <div className="flex justify-between items-center mb-4 md:mb-6">
-          <h2 className="text-xl md:text-2xl font-bold text-gray-800">{title}</h2>
-          <button className="text-blue-600 hover:text-blue-800 text-sm md:text-base transition-colors">
+          <h2 className="text-base md:text-xl font-bold text-gray-800">{title}</h2>
+          <button className="text-blue-600 hover:text-blue-800 text-xs md:text-base transition-colors">
             مشاهده همه
           </button>
         </div>
@@ -137,6 +137,7 @@ const ProductsSection = ({ title = "محصولات جدید", category = null })
               640: {
                 slidesPerView: 2,
                 spaceBetween: 20,
+
               },
               768: {
                 slidesPerView: 3,
