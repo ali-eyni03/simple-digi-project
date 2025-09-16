@@ -18,7 +18,7 @@ import  logo from '../assets/full-horizontal.svg'
 import enamadIcon from "../assets/logo.png"
 import reziIcon from "../assets/rezi.webp"
 import sapraIcon from "../assets/sapra.webp"
-
+import { Link } from "react-router-dom"
 
 const Footer = () => {
   const [expandedSection, setExpandedSection] = useState(null);
@@ -177,17 +177,17 @@ const fullText = `دیجی کالا؛ بزرگترین فروشگاه اینتر
   ];
 
   return (
-    <footer className="bg-white text-gray-800 text-sm rtl font-vazir">
+    <footer className="bg-white text-gray-800 text-sm rtl font-vazir w-full relative">
       {/* Back to top and support */}
       <div className="border-b  mt-20 border-t-1 pt-3 border-gray-200">
-        <div className="container mx-auto py-5 px-4 flex flex-row-reverse justify-between items-center">
+        <div className="mx-auto py-5 px-4 flex flex-row-reverse justify-between items-center">
         {/* Back to  Top*/}
-          <div className="flex justfy-center items-center  bg-white h-12 rounded-lg p-3 border-2 border-gray-200">
+          <div className="absolute top-3 left-3 flex justfy-center items-center  bg-white h-8 md:h-12 rounded-lg p-2 border-2 border-gray-200">
             <button 
               onClick={() => window.scrollTo(0, 0)} 
               className="flex  gap-2 justify-center items-center "
             >
-            <span className="text-gray-400">بازگشت به بالا</span>
+            <span className="text-gray-400 text-sm hidden md:block">بازگشت به بالا</span>
               <FaAngleUp className="text-gray-400" />
 
             </button>
@@ -195,19 +195,19 @@ const fullText = `دیجی کالا؛ بزرگترین فروشگاه اینتر
 
 
         {/* support */}
-          <div className="flex flex-col-reverse justify-end items-start gap-4 text-right ">
-            <div className="text-gray-600 flex gap-3 pt-4">
-              <div className="flex gap-2 border-l-1 border-gray-400 pl-3">
+          <div className="flex flex-col-reverse justify-end items-start gap-2 text-right w-full ">
+            <div className="text-xs md:text-sm text-gray-600 flex flex-col md:flex-row gap-3 pt-4">
+              <div className="flex gap-2 md:border-l-1 border-gray-400 pl-3">
                     <span>تلفن پشتیبانی</span>
                  <span>021-61930000</span>
               </div>
-              <span className="border-l-1 border-gray-400 pl-4">021-91000100</span>
-              <div className="text-xs mt-1 ">۷ روز هفته، ۲۴ ساعته پاسخگوی شما هستیم</div>
+              <span className="md:border-l-1 border-gray-400 pl-4">021-91000100</span>
+              <div className="mt-1 ">۷ روز هفته، ۲۴ ساعته پاسخگوی شما هستیم</div>
             </div>
             <img 
               src={logo} 
               alt="دیجی کالا" 
-              className="h-8"
+              className="h-4 md:h-8"
               onError={(e) => {
                 e.target.src = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='30' viewBox='0 0 120 30'%3E%3Ctext x='10' y='20' font-family='Arial' font-size='16' fill='%23e02444'%3Edigikala%3C/text%3E%3C/svg%3E";
               }}
@@ -292,9 +292,9 @@ const fullText = `دیجی کالا؛ بزرگترین فروشگاه اینتر
                     <ul className={`space-y-3 ${expandedSection === key ? '' : 'hidden'} md:block`}>
                       {section.links.map((link, i) => (
                         <li key={`link-${key}-${i}`}>
-                          <a href="#" className="text-gray-500 hover:text-blue-500 transition-colors text-sm flex justify-end py-1.5">
+                          <Link to="#" className="text-gray-500 hover:text-blue-500 transition-colors text-sm flex justify-end py-1.5">
                             {link}
-                          </a>
+                          </Link>
                         </li>
                       ))}
                     </ul>
@@ -307,32 +307,32 @@ const fullText = `دیجی کالا؛ بزرگترین فروشگاه اینتر
       </div>
 
       {/* App download section */}
-      <div className="py-8 bg-gray-50 border-t border-gray-200">
-            <div className="flex justify-between bg-[#3c4a6d] w-98/100 m-auto h-20 rounded-lg">
-              <div className="flex flex-row-reverse items-center justify-center gap-6 mr-6">
-                <h4 className="font-medium text-white  text-xl">دانلود اپلیکیشن دیجی‌کالا</h4>
-                <img src={footerLogo} alt="" className="w-12 h-12" />
+      <div className="py-8 bg-gray-50 border-t border-gray-200 w-full">
+            <div className="flex justify-between bg-[#3c4a6d] max-h-fit  p-1 rounded-lg mx-3">
+              <div className="flex flex-col-reverse md:flex-row-reverse items-center justify-center gap-6 mr-6 ">
+                <h4 className="font-medium text-white  text-xs md:text-xl text-center">دانلود اپلیکیشن دیجی‌کالا</h4>
+                <img src={footerLogo} alt="" className="w-8 h-8 md:w-12 md:h-12" />
               </div>
-              <div className="flex gap-3 items-center justify-center ml-5">
+              <div className="flex flex-col md:flex-row gap-3 items-center justify-center ml-5">
                 <div >
-                    <a href="#">
+                    <Link to="#">
                         <img src={bazarIcon} alt="" className=".socials"/>
-                    </a>
+                    </Link>
                 </div>
                 <div >
-                    <a href="#">
+                    <Link to="#">
                         <img src={myketIcon} alt="" className=".socials" />
-                    </a>
+                    </Link>
                 </div>
                 <div >
-                    <a href="#">
+                    <Link to="#">
                         <img src={sibIcon} alt="" className=".socials"/>
-                    </a>
+                    </Link>
                 </div>
-                <div className="w-11 h-11 bg-white flex items-center justify-center rounded-lg">
-                    <a href="#" >
+                <div className="w-11 h-11 bg-white  hidden md:flex items-center justify-center rounded-lg">
+                    <Link to="#" >
                         <img src={moreIcon} alt="" />
-                    </a>
+                    </Link>
                 </div>
               </div>
             </div>
@@ -340,9 +340,9 @@ const fullText = `دیجی کالا؛ بزرگترین فروشگاه اینتر
 
       
   
-      {/* Certificates - Fixed in right column */}
-      <div className="flex flex-row-reverse justify-between">
-        <div className="col-span-2 flex items-start justify-end gap-6 pt-6">
+      {/* Certificates*/}
+      <div className=" justify-between">
+        <div className="col-span-2 flex flex-col md:flex-row items-center justify-center gap-6 pt-6 w-full">
         {certificates.map((cert, i) => (
           <div key={`cert-${cert.name}-${i}`} className="bg-white p-5 rounded-lg border border-gray-200 flex items-center justify-center w-28 h-28">
             <img 
@@ -359,7 +359,7 @@ const fullText = `دیجی کالا؛ بزرگترین فروشگاه اینتر
       
       {/* Store description */}
       <div className="col-span-10 p-6 bg-inherit font-sans" dir="rtl">
-        <h1 className="text-2xl font-bold mb-4 text-gray-500">
+        <h1 className="text-sm md:text-2xl font-bold mb-4 text-gray-500">
           دیجی کالا، بزرگترین فروشگاه اینترنتی ایران
         </h1>
         
@@ -373,7 +373,7 @@ const fullText = `دیجی کالا؛ بزرگترین فروشگاه اینتر
               maskImage: !isExpanded ? 'linear-gradient(180deg, #000 70%, transparent)' : 'none'
             }}
           >
-            <p className="mb-4">
+            <p className="mb-4 text-xs md:text-sm">
               {isExpanded ? fullText : shortText}
             </p>
           </div>
@@ -393,20 +393,21 @@ const fullText = `دیجی کالا؛ بزرگترین فروشگاه اینتر
 
 
       {/* Copyright */}
-      <div className="py-4 bg-white border-t border-gray-200 h-20 flex items-center justify-center">
+      <div className="py-4 bg-white border-t border-gray-200 max-h-fit flex items-center justify-center">
         <div className="container mx-auto px-4 text-center">
-          <p className="text-xs text-gray-500">
+          <p className="text-xs md:text-sm text-gray-500">
             برای استفاده از مطالب دیجی‌کالا، داشتن «هدف غیرتجاری» و ذکر «منبع» کافیست. تمام حقوق این وب‌سایت نیز برای شرکت نوآوران فن آوازه (فروشگاه آنلاین دیجی‌کالا) است.
           </p>
         </div>
       </div>
+      
       {/* Partners */}
       <div className="py-8 bg-[#f0f0f0] border-t border-gray-200">
         <div className="container mx-auto px-4">
-          <div className="grid grid-cols-4 md:grid-cols-7 gap-6 items-center">
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-7 gap-2md:gap-6 items-center">
             {partners.map((partner, i) => (
-              <div key={`partner-${i}`} className="flex items-center justify-center h-12">
-                <span className="text-gray-400 text-sm font-medium">{partner}</span>
+              <div key={`partner-${i}`} className="flex items-center justify-center h-9 md:h-12">
+                <span className="text-gray-400 text-xs sm:text-sm  font-medium">{partner}</span>
               </div>
             ))}
           </div>

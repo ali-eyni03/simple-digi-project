@@ -31,9 +31,9 @@ const UserPersonalInfo = () => {
     email: false
   });
 
-  useEffect(() => {
-    fetchProfileInfo();
-  }, []);
+  // useEffect(() => {
+  //   fetchProfileInfo();
+  // }, []);
 
   const fetchProfileInfo = async () => {
     try {

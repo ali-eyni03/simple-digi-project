@@ -13,7 +13,7 @@ export const AuthProvider = ({ children }) => {
     const [isAuthenticated, setIsAuthenticated] = useState(true); 
 
     const loginUser = async (username, password) => {
-        console.log("Demo mode - Mock login:", username);
+        // console.log("Demo mode - Mock login:", username);
         const mockUser = { 
             phone_number: username || "09123456789", 
             user_id: Math.floor(Math.random() * 1000),
@@ -34,7 +34,7 @@ export const AuthProvider = ({ children }) => {
     };
 
     const logoutUser = () => {
-        console.log("Demo mode - Mock logout");
+        // console.log("Demo mode - Mock logout");
         alert("این یک نسخه دمو است - عملیات خروج شبیه‌سازی شد");
         setUser({ 
             phone_number: "09123456789", 
@@ -45,12 +45,12 @@ export const AuthProvider = ({ children }) => {
     };
 
     const refreshUserRole = async () => {
-        console.log("Demo mode - Mock refresh user role");
+        // console.log("Demo mode - Mock refresh user role");
         return userRole;
     };
 
     const switchDemoRole = (newRole) => {
-        console.log("Demo mode - Switching role to:", newRole);
+        // console.log("Demo mode - Switching role to:", newRole);
         setUserRole(newRole);
         
         const roleNames = {
@@ -68,7 +68,7 @@ export const AuthProvider = ({ children }) => {
     const contextData = {
         authTokens,
         setAuthTokens: (tokens) => {
-            console.log("Demo mode - Mock token update:", tokens);
+            // console.log("Demo mode - Mock token update:", tokens);
             setAuthTokens(tokens || { access: "demo-token", refresh: "demo-refresh" });
         },
         user,
@@ -76,7 +76,7 @@ export const AuthProvider = ({ children }) => {
         userRole,
         isAuthenticated,
         setIsAuthenticated: (status) => {
-            console.log("Demo mode - Auth status:", status);
+            // console.log("Demo mode - Auth status:", status);
             setIsAuthenticated(status);
         },
         loginUser,
@@ -86,11 +86,11 @@ export const AuthProvider = ({ children }) => {
         isDemoMode: true 
     };
 
-    useEffect(() => {
-        console.log("Demo mode initialized - All features accessible");
-        console.log("Current user:", user);
-        console.log("Current role:", userRole);
-    }, []);
+    // useEffect(() => {
+    //     console.log("Demo mode initialized - All features accessible");
+    //     console.log("Current user:", user);
+    //     console.log("Current role:", userRole);
+    // }, []);
 
     return (
         <AuthContext.Provider value={contextData}>

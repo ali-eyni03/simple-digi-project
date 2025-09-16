@@ -1,8 +1,7 @@
-import React, { createContext, useContext, useReducer, useEffect } from 'react';
-// import axios from 'axios'; // No longer needed for actual API calls
+import React, { createContext, useContext, useReducer, useEffect, useCallback } from 'react';
 import { AuthContext } from '../auth/AuthContext';
-import { getStaticProducts, getStaticCartItems } from "../data/staticData.js"
-; // Assuming you created this file
+import { getStaticProducts, getStaticCartItems } from "../data/staticData.js";
+
 const CartContext = createContext();
 
 const cartReducer = (state, action) => {
@@ -26,43 +25,42 @@ const cartReducer = (state, action) => {
                 totalItems: 0,
                 totalPrice: 0
             };
-        case 'ADD_ITEM_STATIC':
-            {
-                const { product, quantity } = action.payload;
-                const existingItem = state.items.find(item => item.product.id === product.id);
-                let newItems;
-                if (existingItem) {
-                    newItems = state.items.map(item =>
-                        item.product.id === product.id
-                            ? { ...item, quantity: item.quantity + quantity, total_price: (item.quantity + quantity) * product.price }
-                            : item
-                    );
-                } else {
-                    newItems = [...state.items, { id: Date.now(), product, quantity, total_price: quantity * product.price }];
-                }
-                const newTotalItems = newItems.reduce((sum, item) => sum + item.quantity, 0);
-                const newTotalPrice = newItems.reduce((sum, item) => sum + item.total_price, 0);
-                return { ...state, items: newItems, totalItems: newTotalItems, totalPrice: newTotalPrice };
-            }
-        case 'UPDATE_ITEM_STATIC':
-            {
-                const { itemId, quantity } = action.payload;
-                const newItems = state.items.map(item =>
-                    item.id === itemId
-                        ? { ...item, quantity: quantity, total_price: quantity * item.product.price }
+        case 'ADD_ITEM_STATIC': {
+            const { product, quantity } = action.payload;
+            const existingItem = state.items.find(item => item.product.id === product.id);
+            let newItems;
+
+            if (existingItem) {
+                newItems = state.items.map(item =>
+                    item.product.id === product.id
+                        ? { ...item, quantity: item.quantity + quantity, total_price: (item.quantity + quantity) * product.price }
                         : item
                 );
-                const newTotalItems = newItems.reduce((sum, item) => sum + item.quantity, 0);
-                const newTotalPrice = newItems.reduce((sum, item) => sum + item.total_price, 0);
-                return { ...state, items: newItems, totalItems: newTotalItems, totalPrice: newTotalPrice };
+            } else {
+                newItems = [...state.items, { id: Date.now(), product, quantity, total_price: quantity * product.price }];
             }
-        case 'REMOVE_ITEM_STATIC':
-            {
-                const newItems = state.items.filter(item => item.id !== action.payload);
-                const newTotalItems = newItems.reduce((sum, item) => sum + item.quantity, 0);
-                const newTotalPrice = newItems.reduce((sum, item) => sum + item.total_price, 0);
-                return { ...state, items: newItems, totalItems: newTotalItems, totalPrice: newTotalPrice };
-            }
+
+            const newTotalItems = newItems.reduce((sum, item) => sum + item.quantity, 0);
+            const newTotalPrice = newItems.reduce((sum, item) => sum + item.total_price, 0);
+            return { ...state, items: newItems, totalItems: newTotalItems, totalPrice: newTotalPrice };
+        }
+        case 'UPDATE_ITEM_STATIC': {
+            const { itemId, quantity } = action.payload;
+            const newItems = state.items.map(item =>
+                item.id === itemId
+                    ? { ...item, quantity: quantity, total_price: quantity * item.product.price }
+                    : item
+            );
+            const newTotalItems = newItems.reduce((sum, item) => sum + item.quantity, 0);
+            const newTotalPrice = newItems.reduce((sum, item) => sum + item.total_price, 0);
+            return { ...state, items: newItems, totalItems: newTotalItems, totalPrice: newTotalPrice };
+        }
+        case 'REMOVE_ITEM_STATIC': {
+            const newItems = state.items.filter(item => item.id !== action.payload);
+            const newTotalItems = newItems.reduce((sum, item) => sum + item.quantity, 0);
+            const newTotalPrice = newItems.reduce((sum, item) => sum + item.total_price, 0);
+            return { ...state, items: newItems, totalItems: newTotalItems, totalPrice: newTotalPrice };
+        }
         default:
             return state;
     }
@@ -78,12 +76,12 @@ const initialState = {
 
 export const CartProvider = ({ children }) => {
     const [state, dispatch] = useReducer(cartReducer, initialState);
-    const { user, isAuthenticated } = useContext(AuthContext); 
+    const { user, isAuthenticated } = useContext(AuthContext);
 
-    const fetchCart = async () => {
+    const fetchCart = useCallback(async () => {
         dispatch({ type: 'SET_LOADING', payload: true });
         try {
-            const staticCartItems = getStaticCartItems(); // Use your static data parser
+            const staticCartItems = getStaticCartItems();
             const totalItems = staticCartItems.reduce((sum, item) => sum + item.quantity, 0);
             const totalPrice = staticCartItems.reduce((sum, item) => sum + item.total_price, 0);
 
@@ -100,13 +98,13 @@ export const CartProvider = ({ children }) => {
             dispatch({ type: 'SET_ERROR', payload: error.message });
             dispatch({ type: 'CLEAR_CART' });
         }
-    };
+    }, []);
 
     const addToCart = async (productId, quantity = 1) => {
-        if (!isAuthenticated) { 
+        if (!isAuthenticated) {
             alert('برای افزودن به سبد خرید باید وارد حساب کاربری خود شوید (در حالت دمو، این پیام فقط برای اطلاع است).');
         }
-        
+
         const productToAdd = getStaticProducts().find(p => p.id === productId);
         if (productToAdd) {
             dispatch({ type: 'ADD_ITEM_STATIC', payload: { product: productToAdd, quantity } });
@@ -138,7 +136,6 @@ export const CartProvider = ({ children }) => {
         if (!isAuthenticated) {
             return { success: false, error: 'کاربر وارد نشده است (در حالت دمو، این پیام فقط برای اطلاع است).' };
         }
-        console.log("Mock order created:", orderData, state.items);
         dispatch({ type: 'CLEAR_CART' });
         const mockOrderNumber = `DEMO-${Date.now().toString().slice(-7)}`;
         return {
@@ -149,7 +146,7 @@ export const CartProvider = ({ children }) => {
 
     useEffect(() => {
         fetchCart();
-    }, [isAuthenticated]);
+    }, [isAuthenticated, fetchCart]);
 
     const value = {
         ...state,

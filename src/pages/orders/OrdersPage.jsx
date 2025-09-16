@@ -326,7 +326,7 @@ const OrdersPage = () => {
     <>
       <div className="max-w-6xl  p-2 space-y-4">
         {/* Header */}
-        <div className=" p-2">
+        <div className=" p-2 w-full ">
           <h1 className="text-2xl font-bold text-gray-600 flex items-center gap-2">
             <FaShoppingCart />
             سفارش‌های من
@@ -367,14 +367,14 @@ const OrdersPage = () => {
         </div>
 
         {/* Tabs */}
-        <div className="bg-white rounded-lg shadow-sm">
+        <div className="bg-white rounded-lg shadow-sm w-full">
           <div className="border-b overflow-x-auto">
             <div className="flex">
               {tabs.map(tab => (
                 <button
                   key={tab.id}
                   onClick={() => setActiveTab(tab.id)}
-                  className={`px-4 md:px-6 py-3 font-medium text-sm border-b-2 border-gray-300 transition-colors whitespace-nowrap flex items-center gap-2 ${
+                  className={`px-2 py-3 font-medium text-xs border-b-2 border-gray-300 transition-colors whitespace-nowrap flex items-center gap-2 ${
                     activeTab === tab.id
                       ? 'border-blue-500 text-blue-600'
                       : 'border-transparent text-gray-500 hover:text-gray-700'
@@ -409,7 +409,7 @@ const OrdersPage = () => {
                   const isExpanded = expandedOrder === order.id;
 
                   return (
-                    <div key={order.id} className="border border-gray-300 rounded-lg overflow-hidden">
+                    <div key={order.id} className="border border-gray-300 rounded-lg overflow-x-auto ">
                       {/* Order Header */}
                       <div
                         className="p-4 bg-gray-50 cursor-pointer hover:bg-gray-100"
@@ -417,18 +417,18 @@ const OrdersPage = () => {
                       >
                         <div className="flex items-center justify-between">
                           <div className="flex items-center gap-4">
-                            <div className={`text-${statusInfo.color}-500 text-2xl`}>
+                            <div className={`text-${statusInfo.color}-500 text-sm md:text-2xl`}>
                               {statusInfo.icon}
                             </div>
                             <div>
-                              <div className="flex items-center gap-2 mb-1 b">
+                              <div className="flex items-center gap-2 mb-1 text-xs md:text-sm">
                                 <span className="font-semibold">شماره سفارش:</span>
                                 <span className="font-mono">{order.order_number}</span>
-                                <span className={`bg-${statusInfo.color}-100 text-${statusInfo.color}-700 text-xs px-2 py-0.5 rounded`}>
+                                <span className={`bg-${statusInfo.color}-100 text-${statusInfo.color}-700 text-xs px-2 py-0.5 rounded hidden md:block`}>
                                   {statusInfo.label}
                                 </span>
                               </div>
-                              <div className="text-sm text-gray-600">
+                              <div className="text-xs md:text-sm text-gray-600">
                                 <span>{formatDate(order.created_at)}</span>
                                 <span className="mx-2">•</span>
                                 <span>{order.items.length} محصول</span>

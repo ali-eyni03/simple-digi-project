@@ -333,7 +333,7 @@ function Navbar() {
 			</div>
 
 			{/* Categories Menu */}
-			<div className="flex w-full px-4 mb-2.5 justify-between items-end py-2 overflow-hidden">
+			<div className="flex w-full px-4 justify-between items-end py-2 overflow-hidden">
 				<div className="flex w-full">
 					<ul className="flex text-sm text-gray-600 mt-2 gap-3 components">
 						<li className="font-semibold text-black pl-6 border-l-1 border-l-gray-500">
